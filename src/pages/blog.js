@@ -22,9 +22,19 @@ const Index = ({ data }) => {
     <MainLayout>
       <Helmet title={config.siteTitle} />
       <SEO />
-      <HeroSection />
       <Box maxWidth={960} margin="0 auto">
+        <SectionTitle title="সাম্প্রতিক লেখা" />
+        <PostListing postEdges={postEdges} limit={6} showAllPostButton />
         <SectionTitle title="বিষয়সমূহ" />
+        <TagList tags={tags} showAllTagsButton />
+        <Box p={{ xs: 3, sm: 2 }}>
+          <NoticeBox variant="notice">
+            <Text>
+              আপনিও লিখতে চান?{' '}
+              <Link to="/contribution-guide">এখানে বিস্তারিত দেখুন</Link>
+            </Text>
+          </NoticeBox>
+        </Box>
       </Box>
     </MainLayout>
   );
@@ -34,7 +44,7 @@ export default Index;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query IndexQuery {
+  query BlogQuery {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [fields___date], order: DESC }

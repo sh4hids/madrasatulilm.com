@@ -3,15 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 
   /* fira-code-regular - latin */
-  @font-face {
-    font-family: 'Kalpurush';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''),
-         url('/assets/fonts/kalpurush.woff2') format('woff2'),
-         url('/assets/fonts/kalpurush.woff') format('woff');
-  }
-
   * {
     margin: 0;
     padding: 0;

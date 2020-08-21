@@ -6,8 +6,6 @@ import { configActions } from '../../state/config';
 import Flex from './Flex';
 import LogoDark from '../assets/images/logo-dark.svg';
 import LogoLight from '../assets/images/logo-light.svg';
-import Sun from '../assets/icons/sun.svg';
-import Moon from '../assets/icons/moon.svg';
 
 const MenuContainer = styled.div`
   margin: 0;
@@ -48,22 +46,8 @@ const MenuContainer = styled.div`
         width: 100%;
       }
 
-      .theme-toggle {
-        background: none;
-        border: none;
-        outline: none;
-        cursor: pointer;
-
-        svg {
-          position: relative;
-          top: 6px;
-        }
-      }
-
       &:last-child {
-        margin-left: 4px;
         margin-right: 0;
-        border-left: 1px solid ${({ theme }) => theme.colors.dark1};
       }
 
       &::before,
@@ -72,9 +56,12 @@ const MenuContainer = styled.div`
       }
     }
   }
+
+  @media only screen and (max-width: 786px) {
+  }
 `;
 
-const MainMenu = ({ theme, toggleTheme }) => {
+const MainMenu = ({ theme }) => {
   return (
     <MenuContainer>
       <Flex
@@ -90,26 +77,26 @@ const MainMenu = ({ theme, toggleTheme }) => {
           ) : (
             <LogoLight className="header-logo" />
           )}
-          <span className="site-title">প্রযুক্তি স্কুল</span>
+          <span className="site-title">মাদরাসাতুল ইলম</span>
         </Link>
         <ul>
           <li>
             <Link to="/">নীড়পাতা</Link>
           </li>
           <li>
-            <Link to="/posts">লেখাসমূহ</Link>
+            <Link to="/blog">ব্লগ</Link>
           </li>
           <li>
-            <button
-              className="theme-toggle"
-              type="button"
-              title={theme.name === 'dark' ? 'Toggle Light' : 'Toggle Dark'}
-              onClick={() => {
-                toggleTheme(theme.name === 'dark' ? 'light' : 'dark');
-              }}
-            >
-              {theme.name === 'dark' ? <Sun /> : <Moon />}
-            </button>
+            <Link to="/facilities">সুবিধাসমূহ</Link>
+          </li>
+          <li>
+            <Link to="/study-materials">শিক্ষা উপকরণ</Link>
+          </li>
+          <li>
+            <Link to="/notices">নোটিশ</Link>
+          </li>
+          <li>
+            <Link to="/contact">যোগাযোগ</Link>
           </li>
         </ul>
       </Flex>

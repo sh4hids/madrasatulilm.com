@@ -1,14 +1,13 @@
 const config = {
-  siteTitle: 'প্রযুক্তি স্কুল', // Site title.
-  siteTitleShort: 'প্রযুক্তি স্কুল', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-  siteSlogan: 'শিখতে চাই, তাই শেখাই :)', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-  siteTitleAlt: 'প্রযুক্তি স্কুল', // Alternative site title for SEO.
+  siteTitle: 'মাদরাসাতুল ইলম', // Site title.
+  siteTitleShort: 'মাদরাসাতুল ইলম', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
+  siteSlogan: 'বিশুদ্ধ ইসলামি জ্ঞানের এক নির্ভরযোগ্য প্রতিষ্ঠান', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
+  siteTitleAlt: 'মাদরাসাতুল ইলম', // Alternative site title for SEO.
   siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
   siteImage: '/assets/images/seo-bg.jpg', // Logo used for SEO and manifest.
   siteUrl: 'https://prozuktischool.com/', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
-  siteDescription:
-    'বাংলা ভাষাভাষী মানুষদের জন্য প্রযুক্তি শেখার ও শেখানোর পাঠশালা', // Website description used for RSS feeds/meta description tag.
+  siteDescription: 'বিশুদ্ধ ইসলামি জ্ঞানের এক নির্ভরযোগ্য প্রতিষ্ঠান', // Website description used for RSS feeds/meta description tag.
   siteRss: '/rss.xml', // Path to the RSS file.
   siteFBAppID: '', // FB Application ID for using app insights
   googleAnalyticsID: 'UA-129538625-1', // GA tracking ID.
@@ -20,9 +19,7 @@ const config = {
   userTwitter: '', // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: 'Dhaka, Bangladesh', // User location to display in the author segment.
   userAvatar: 'https://api.adorable.io/avatars/150/test.png', // User avatar to display in the author segment.
-  userDescription:
-    "Yeah, I like animals better than people sometimes... Especially dogs. Dogs are the best. Every time you come home, they act like they haven't seen you in a year. And the good thing about dogs... is they got different dogs for different people.", // User description to display in the author segment.
-  // Links to social profiles/projects you want to display in the author segment/navigation bar.
+  userDescription: '',
   userLinks: [
     {
       label: 'GitHub',

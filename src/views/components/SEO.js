@@ -100,6 +100,20 @@ class SEO extends Component {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
+        <link
+          rel="preload"
+          href="/assets/fonts/kalpurush.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/assets/fonts/kalpurush.woff"
+          as="font"
+          type="font/woff"
+          crossOrigin="anonymous"
+        />
       </Helmet>
     );
   }
