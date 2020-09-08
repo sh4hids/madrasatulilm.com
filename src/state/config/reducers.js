@@ -2,7 +2,7 @@ import * as types from './types';
 
 const initialState = {
   theme: {
-    name: 'dark',
+    name: 'light',
   },
 };
 

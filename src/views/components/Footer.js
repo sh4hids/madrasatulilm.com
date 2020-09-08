@@ -60,47 +60,15 @@ const Footer = ({ theme }) => {
         justifyContent="space-between"
         pl={3}
         pr={3}
-      >
-        <ul className="mini-site-map">
-          <li>
-            <Link to="/about">পরিচিতি</Link>
-          </li>
-          <li>
-            <Link to="/contact">যোগাযোগ</Link>
-          </li>
-          <li>
-            <Link to="/contribution-guide">নির্দেশনা</Link>
-          </li>
-        </ul>
-      </Flex>
-      <Flex
-        maxWidth={960}
-        margin="0 auto"
-        justifyContent="space-between"
-        pl={3}
-        pr={3}
         flexWrap="wrap"
       >
         <Box width={1}>
-          <Text textAlign="center" variant="caption" mb={0}>
-            এই প্রজেক্টের সম্পূর্ণ সোর্স কোড পাবেন আমাদের{' '}
-            <a
-              href="https://github.com/bdTechies/prozuktischool.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              গিটহাব রিপোজিটরিতে
-            </a>
-            ।
-          </Text>
-        </Box>
-        <Box width={1}>
           <Text textAlign="center" variant="caption" mt={1}>
             লেখস্বত্ব &copy;{' '}
-            {`${convertNumbers(2016)} - ${convertNumbers(
+            {`${convertNumbers(2019)} - ${convertNumbers(
               new Date().getFullYear()
             )} `}
-            <a href="https://prozuktischool.com/">প্রযুক্তি স্কুল</a>
+            <a href="https://madrasatulilm.com/">মাদ্‌রাসাতুল ইল্‌ম</a>
           </Text>
         </Box>
       </Flex>
