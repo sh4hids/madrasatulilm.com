@@ -12,13 +12,13 @@ const Container = styled(Box)`
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: ${({ theme }) => theme.colors.light2};
+  color: ${({ theme }) => theme.colors.text};
   border-radius: 4px;
   position: relative;
   padding: 32px;
   transition: all ease-in-out 0.2s;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
-  background: ${({ theme }) => theme.colors.dark1}
+  background: ${({ theme }) => theme.colors.bg}
     linear-gradient(
       -45deg,
       ${({ theme, language }) =>

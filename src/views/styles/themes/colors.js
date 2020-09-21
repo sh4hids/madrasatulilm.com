@@ -3,11 +3,11 @@ import languageColors from '../languageColors.json';
 languageColors.React = '#61DAFB';
 
 const colors = {
-  primary3: '#7950F2',
-  primary2: '#845EF7',
-  primary1: '#9775FA',
-  dark2: '#212529',
-  dark1: '#495057',
+  primary3: '#2b9348',
+  primary2: '#55a630',
+  primary1: '#80b918',
+  dark2: '#222134',
+  dark1: '#212f45',
   light2: '#f8f9fa',
   light1: '#E2E4E5',
   error: '#FA5252',

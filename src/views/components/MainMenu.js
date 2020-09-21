@@ -20,14 +20,19 @@ const MenuContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
   box-shadow: 0 0 2px ${({ theme }) => theme.colors.dark2};
   border-bottom: 1px solid ${({ theme }) => theme.colors.dark1};
+
+  svg {
+    stroke: ${({ theme }) => theme.colors.primary3} !important;
+  }
+
   .home-url {
     display: inline-flex;
     .header-logo {
-      width: 48px;
-      height: 48px;
+      width: 60px;
+      height: 60px;
     }
     .site-title {
-      line-height: 48px;
+      line-height: 60px;
     }
   }
   ul {
@@ -35,6 +40,7 @@ const MenuContainer = styled.div`
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    padding-top: 16px;
     li {
       margin-right: 24px;
       a {
@@ -132,11 +138,11 @@ const MainMenu = ({ theme, toggleTheme }) => {
         pr={3}
       >
         <Link to="/" className="home-url">
-          {theme.name === 'dark' ? (
+          {/* {theme.name === 'dark' ? (
             <LogoDark className="header-logo" />
-          ) : (
+            ) : (
             <LogoLight className="header-logo" />
-          )}
+          )} */}
           <span className="site-title">মাদ্‌রাসাতুল ইল্‌ম</span>
         </Link>
         <span>
@@ -147,8 +153,14 @@ const MainMenu = ({ theme, toggleTheme }) => {
             <li>
               <Link to="/about/">পরিচিতি</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/blog/">ব্লগ</Link>
+            </li> */}
+            <li>
+              <Link to="/facilities/">সুবিধাসমূহ</Link>
+            </li>
+            <li>
+              <Link to="/study-materials/">শিক্ষাপোকরণ</Link>
             </li>
             <li>
               <Link to="/contact/">যোগাযোগ</Link>

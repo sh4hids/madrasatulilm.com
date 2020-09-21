@@ -221,7 +221,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`PT Serif`, `Fira Code`],
+        fonts: [`Hind Siliguri`, `Lateef`],
         display: 'swap',
       },
     },

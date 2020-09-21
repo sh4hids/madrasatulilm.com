@@ -67,7 +67,7 @@ class SEO extends Component {
         }
       );
     }
-    title = `${config.siteTitle} ⌇ ${title}`;
+    title = `${config.siteTitle} | ${title}`;
     return (
       <Helmet htmlAttributes={{ lang: 'bn' }}>
         {/* General tags */}

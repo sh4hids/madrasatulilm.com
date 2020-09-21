@@ -1,5 +1,4 @@
 import React from 'react';
-import kebabCase from 'lodash/kebabCase';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Box from './Box';
@@ -25,19 +24,17 @@ const TagList = ({ tags = [], showAllTagsButton = false }) => {
         (tag, index) =>
           index < 6 && (
             <Box key={tag.title} width={[1, 1 / 3]} px={3} py={3}>
-              <Link to={`/tags/${kebabCase(tag.title)}/`}>
-                <SummaryCard height={100}>
-                  <ColoredHash />
-                  {tag.title}
-                </SummaryCard>
-              </Link>
+              <SummaryCard height={100}>
+                <ColoredHash />
+                {tag.title}
+              </SummaryCard>
             </Box>
           )
       )}
       {tags.length > showAllTagsButton && (
         <Box p={3} width={1} display="block" textAlign="center">
-          <Link to="/tags">
-            <Button variant="primary">সকল ট্যাগ দেখুন</Button>
+          <Link to="/about/">
+            <Button variant="primary">বিস্তারিত দেখুন</Button>
           </Link>
         </Box>
       )}

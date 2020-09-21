@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Carousel from 'react-elastic-carousel';
 
 const HeroContainer = styled.div`
@@ -15,6 +15,18 @@ const HeroContainer = styled.div`
     bottom: 16px;
   }
 
+  .rec-dot.rec.rec-dot_active {
+    background-color: ${({ theme }) => theme.colors.primary1};
+    box-shadow: 0 0 1px 3px ${({ theme }) => theme.colors.primary3};
+  }
+
+  .rec-dot.rec {
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 1px 3px ${({ theme }) => theme.colors.primary1};
+    }
+  }
+
   ul {
     li {
       &::after,
@@ -26,14 +38,20 @@ const HeroContainer = styled.div`
 `;
 
 const Item = styled.div`
-  height: 480px;
+  height: 68vh;
   transition: transform 200ms ease;
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
   color: #fff;
-  background-color: #673ab7;
-  background-image: url('https://images.pexels.com/photos/1586150/pexels-photo-1586150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  ${({ bgImage }) =>
+    bgImage
+      ? css`
+          background-image: url('/assets/images/${bgImage}');
+        `
+      : css`
+          background-image: url('/assets/images/madrasatul-ilm-01_s.jpg');
+        `};
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,7 +70,7 @@ const Item = styled.div`
     content: '';
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.2);
   }
 
   .item-details {
@@ -60,6 +78,8 @@ const Item = styled.div`
     padding: 32px;
     text-align: center;
     z-index: 123;
+    position: relative;
+    bottom: 0;
   }
 `;
 
@@ -74,55 +94,14 @@ const HeroSection = () => {
         autoPlaySpeed={3000}
         showArrows={false}
       >
-        <Item>
-          <div className="item-details">
-            {' '}
-            1: আল-কুর্‌আনুল কারীমের হিফয কার্যক্রমকে কেন্দ্র করে বাংলাদেশে গড়ে
-            উঠেছে অসংখ্য প্রতিষ্ঠান। কিন্তু আমরা লক্ষ্য করেছি, প্রতিষ্ঠানগুলোর
-            বেশিরভাগই আল-কুর্‌আনের মূল উদ্দেশ্যকে পূরণ করতে ব্যর্থ। পবিত্র
-            গ্রন্থ আল-কুর্‌আন নাযিলের মূল উদ্দেশ্য সম্পর্কে আল্লাহ বলেন:
-          </div>
-        </Item>
-        <Item>
-          <div className="item-details">
-            2: আল-কুর্‌আনুল কারীমের হিফয কার্যক্রমকে কেন্দ্র করে বাংলাদেশে গড়ে
-            উঠেছে অসংখ্য প্রতিষ্ঠান। কিন্তু আমরা লক্ষ্য করেছি, প্রতিষ্ঠানগুলোর
-            বেশিরভাগই আল-কুর্‌আনের মূল উদ্দেশ্যকে পূরণ করতে ব্যর্থ। পবিত্র
-            গ্রন্থ আল-কুর্‌আন নাযিলের মূল উদ্দেশ্য সম্পর্কে আল্লাহ বলেন:
-          </div>
-        </Item>
-        <Item>
-          <div className="item-details">
-            3: আল-কুর্‌আনুল কারীমের হিফয কার্যক্রমকে কেন্দ্র করে বাংলাদেশে গড়ে
-            উঠেছে অসংখ্য প্রতিষ্ঠান। কিন্তু আমরা লক্ষ্য করেছি, প্রতিষ্ঠানগুলোর
-            বেশিরভাগই আল-কুর্‌আনের মূল উদ্দেশ্যকে পূরণ করতে ব্যর্থ। পবিত্র
-            গ্রন্থ আল-কুর্‌আন নাযিলের মূল উদ্দেশ্য সম্পর্কে আল্লাহ বলেন:
-          </div>
-        </Item>
-        <Item>
-          <div className="item-details">
-            4: আল-কুর্‌আনুল কারীমের হিফয কার্যক্রমকে কেন্দ্র করে বাংলাদেশে গড়ে
-            উঠেছে অসংখ্য প্রতিষ্ঠান। কিন্তু আমরা লক্ষ্য করেছি, প্রতিষ্ঠানগুলোর
-            বেশিরভাগই আল-কুর্‌আনের মূল উদ্দেশ্যকে পূরণ করতে ব্যর্থ। পবিত্র
-            গ্রন্থ আল-কুর্‌আন নাযিলের মূল উদ্দেশ্য সম্পর্কে আল্লাহ বলেন:
-          </div>
-        </Item>
-        <Item>
-          <div className="item-details">
-            5: আল-কুর্‌আনুল কারীমের হিফয কার্যক্রমকে কেন্দ্র করে বাংলাদেশে গড়ে
-            উঠেছে অসংখ্য প্রতিষ্ঠান। কিন্তু আমরা লক্ষ্য করেছি, প্রতিষ্ঠানগুলোর
-            বেশিরভাগই আল-কুর্‌আনের মূল উদ্দেশ্যকে পূরণ করতে ব্যর্থ। পবিত্র
-            গ্রন্থ আল-কুর্‌আন নাযিলের মূল উদ্দেশ্য সম্পর্কে আল্লাহ বলেন:
-          </div>
-        </Item>
-        <Item>
-          <div className="item-details">
-            6: আল-কুর্‌আনুল কারীমের হিফয কার্যক্রমকে কেন্দ্র করে বাংলাদেশে গড়ে
-            উঠেছে অসংখ্য প্রতিষ্ঠান। কিন্তু আমরা লক্ষ্য করেছি, প্রতিষ্ঠানগুলোর
-            বেশিরভাগই আল-কুর্‌আনের মূল উদ্দেশ্যকে পূরণ করতে ব্যর্থ। পবিত্র
-            গ্রন্থ আল-কুর্‌আন নাযিলের মূল উদ্দেশ্য সম্পর্কে আল্লাহ বলেন:
-          </div>
-        </Item>
+        <Item />
+        <Item bgImage="madrasatul-ilm-02_s.jpg" />
+        <Item bgImage="madrasatul-ilm-03_s.jpg" />
+        <Item bgImage="madrasatul-ilm-06_s.jpg" />
+        <Item bgImage="madrasatul-ilm-07_s.jpg" />
+        <Item bgImage="madrasatul-ilm-08_s.jpg" />
+        <Item bgImage="madrasatul-ilm-09_s.jpg" />
+        <Item bgImage="madrasatul-ilm-10_s.jpg" />
       </Carousel>
     </HeroContainer>
   );

@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body {
-    font-family: 'Kalpurush', 'PT Serif', serif;
+    font-family: 'Hind Siliguri', 'Lateef', sans-serif;
     // font-size: 20px;
     font-size: calc(16px + (20 - 16) * ((100vw - 400px) / (1600 - 400)));
     line-height: calc(16px + 1.2vw);

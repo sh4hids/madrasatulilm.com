@@ -8,7 +8,6 @@ const Button = styled.button`
   border-radius: 4px;
   padding: 10px 16px 8px 16px;
   cursor: pointer;
-  font-family: 'Kalpurush', 'PT Serif', serif;
   transition: all ease-in-out 0.3s;
   position: relative;
   font-size: calc(14px + (18 - 14) * ((100vw - 400px) / (1600 - 400)));
