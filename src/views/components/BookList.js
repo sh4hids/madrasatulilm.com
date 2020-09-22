@@ -1,26 +1,13 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
 import Box from './Box';
 import Button from './Button';
 import Flex from './Flex';
 import SummaryCard from './SummaryCard';
 import Text from './Text';
 
-import Hash from '../assets/icons/hash.svg';
-
-const ColoredHash = styled(Hash)`
-  position: relative;
-  top: -2px;
-
-  path {
-    stroke: ${({ theme }) => theme.colors.primary3};
-  }
-`;
-
-const BookList = ({ books = [], showAllTagsButton = false }) => {
+const BookList = ({ books = [] }) => {
   return (
-    <Flex mx={[0, -2]} flexWrap="wrap">
+    <Flex mx={[0, -2]} flexWrap="wrap" mt={4}>
       {books.map(
         (book, index) =>
         index < 6 && (
@@ -34,8 +21,8 @@ const BookList = ({ books = [], showAllTagsButton = false }) => {
                 </a>
               </div>
             </SummaryCard>
-          </Box>
-        )
+            </Box>
+          )
       )}
     </Flex>
   );

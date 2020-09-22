@@ -36,7 +36,6 @@ export const pageQuery = graphql`
             tags
             cover
             date
-            language
           }
         }
       }

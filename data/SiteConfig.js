@@ -1,10 +1,10 @@
 const config = {
-  siteTitle: 'মাদরাসাতুল ইলম', // Site title.
-  siteTitleShort: 'মাদরাসাতুল ইলম', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
+  siteTitle: 'মাদ্‌রাসাতুল ইল্‌ম', // Site title.
+  siteTitleShort: 'মাদ্‌রাসাতুল ইল্‌ম', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteSlogan: 'বিশুদ্ধ ইসলামি জ্ঞানের এক নির্ভরযোগ্য প্রতিষ্ঠান', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-  siteTitleAlt: 'মাদরাসাতুল ইলম', // Alternative site title for SEO.
+  siteTitleAlt: 'মাদ্‌রাসাতুল ইল্‌ম', // Alternative site title for SEO.
   siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
-  siteImage: '/assets/images/seo-bg.jpg', // Logo used for SEO and manifest.
+  siteImage: '/assets/images/madrasatul-ilm.jpg', // Logo used for SEO and manifest.
   siteUrl: 'https://dev.madrasatulilm.com/', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: 'বিশুদ্ধ ইসলামি জ্ঞানের এক নির্ভরযোগ্য প্রতিষ্ঠান', // Website description used for RSS feeds/meta description tag.

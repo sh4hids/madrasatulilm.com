@@ -4,8 +4,6 @@ import { Link } from 'gatsby';
 import { connect } from 'react-redux';
 import { configActions } from '../../state/config';
 import Flex from './Flex';
-import LogoDark from '../assets/images/logo-dark.svg';
-import LogoLight from '../assets/images/logo-light.svg';
 import Sun from '../assets/icons/sun.svg';
 import Moon from '../assets/icons/moon.svg';
 import Menu from '../assets/icons/menu.svg';
@@ -40,7 +38,7 @@ const MenuContainer = styled.div`
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    padding-top: 16px;
+    padding-top: 10px;
     li {
       margin-right: 24px;
       a {

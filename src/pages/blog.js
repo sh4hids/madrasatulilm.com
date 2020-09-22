@@ -5,7 +5,6 @@ import { MainLayout } from '../views/layouts';
 import PostListing from '../components/PostListing';
 import {
   Box,
-  HeroSection,
   SectionTitle,
   SEO,
   TagList,
@@ -63,7 +62,6 @@ export const pageQuery = graphql`
             tags
             cover
             date
-            language
           }
         }
       }

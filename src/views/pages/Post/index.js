@@ -117,7 +117,6 @@ export const pageQuery = graphql`
         title
         cover
         date
-        category
         tags
         series
         author {

@@ -72,36 +72,3 @@ const Index = () => {
 };
 
 export default Index;
-
-/* eslint no-undef: "off" */
-export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(
-      limit: 2000
-      sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { published: { eq: true } } }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-            date
-          }
-          excerpt
-          timeToRead
-          frontmatter {
-            title
-            tags
-            cover
-            date
-            language
-          }
-        }
-      }
-      tags: group(field: frontmatter___tags) {
-        title: fieldValue
-        totalCount
-      }
-    }
-  }
-`;
