@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Hind Siliguri', 'Lateef', sans-serif;
     // font-size: 20px;
     font-size: calc(16px + (20 - 16) * ((100vw - 400px) / (1600 - 400)));
-    line-height: calc(16px + 1.2vw);
+    line-height: calc(24px + 1.2vw);
     color: ${({ theme }) => theme.colors.text};
     background-color: ${({ theme }) => theme.colors.background};
 
@@ -51,7 +51,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h4, h5, h6 {
-    line-height: calc(18px + .2vw);
+    line-height: calc(18px + .4vw);
 
     @media only screen and (max-width: 576px) {
       line-height: calc(20px + 1.2vw);

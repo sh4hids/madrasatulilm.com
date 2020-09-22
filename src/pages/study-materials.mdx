@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
-import { Box, Divider, SEO, Text } from '../views/components';
+import { Box, Divider, SEO, Text, BookList } from '../views/components';
 
-<SEO pageTitle="যোগাযোগ" />
+<SEO pageTitle="শিক্ষাপোকরণ" />
 <Box maxWidth={960} margin="0 auto" padding={{ xs: 3, sm: 4 }}>
 
 
@@ -9,6 +9,21 @@ import { Box, Divider, SEO, Text } from '../views/components';
   শিক্ষাপোকরণ
 </Text>
 <Divider />
+
+<BookList
+  books={[
+    {
+      title: 'আরবী বর্ণ ও সাথে উদাহরণস্বরূপ ছবি',
+      link:
+        'https://drive.google.com/file/d/1N8JVAgR8-hExs_usGvLWAA43JrtXhuM0/view?usp=sharing',
+    },
+    {
+      title: 'আরবী বর্ণ, তাদের ৪ টি রূপ ও ছবিসহ শব্দ',
+      link:
+        'https://drive.google.com/drive/folders/1XpkKzzDCHjktn-yLlW76NAbuPzng351f?usp=sharing',
+    },
+  ]}
+/>
 
 আরবী বর্ণ ও সাথে উদাহরণস্বরূপ ছবি_Book
 (গুগল ড্রাইভের নিচের লিঙ্ক টা হাইপারলিঙ্কড করা থাকবে
