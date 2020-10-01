@@ -245,13 +245,11 @@ const FourOFour = () => {
   return (
     <ThemeProvider theme={dark}>
       <GlobalStyle />
-      <SEO pageTitle="৪০৪ - মাইনকার চিপা" />
+      <SEO pageTitle="৪০৪ - কিছু পাওয়া যায়নি" />
       <Container>
         <div className="error_404">
-          <Text variant="h3">৪০৪ | মাইনকার চিপা</Text>
-          <Text variant="h2">
-            মনে হচ্ছে ভুল করে আপনি মাইনকার চিপায় চলে এসেছেন।
-          </Text>
+          <Text variant="h3">৪০৪ | কিছু পাওয়া যায়নি</Text>
+          <Text variant="h2">দুঃখিত আপনার খোঁজকৃত পাতাটি পাওয়া যায়নি।</Text>
         </div>
         <div className="compass_container">
           <div className="outside_circle">

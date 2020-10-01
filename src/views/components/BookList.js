@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import Box from './Box';
 import Button from './Button';
 import Flex from './Flex';
@@ -16,12 +17,12 @@ const BookList = ({ books = [] }) => {
               <div>
                 <Text variant="h3">{book.title}</Text>
 
-                <a href={book.link} target="_blank" rel="noreferrer noopener">
+                <Link to={book.link}>
                   <Button variant="primary">ডাউনলোড</Button>
-                </a>
+                </Link>
               </div>
             </SummaryCard>
-            </Box>
+          </Box>
           )
       )}
     </Flex>

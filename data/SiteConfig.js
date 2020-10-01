@@ -18,20 +18,6 @@ const config = {
   userEmail: 'contact@madrasatulilm.com', // Email used for RSS feed's author segment
   userTwitter: '', // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: 'Dhaka, Bangladesh', // User location to display in the author segment.
-  userAvatar: 'https://api.adorable.io/avatars/150/test.png', // User avatar to display in the author segment.
-  userDescription: '',
-  userLinks: [
-    {
-      label: 'GitHub',
-      url: 'https://github.com/wgao19/gatsby-starter-multiple-author',
-      iconClassName: 'fa fa-github',
-    },
-    {
-      label: 'Twitter',
-      url: 'https://twitter.com/wgao19',
-      iconClassName: 'fa fa-twitter',
-    },
-  ],
   copyright: 'Copyright © 2019. Advanced User', // Copyright string for the footer of the website and RSS feed.
   themeColor: '#7950F2', // Used for setting manifest and progress theme colors.
   backgroundColor: '#212529', // Used for setting manifest background color.

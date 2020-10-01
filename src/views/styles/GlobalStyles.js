@@ -82,6 +82,19 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.132rem;
   }
 
+  blockquote {
+    background: ${({ theme }) => theme.colors.text};
+    padding: 16px 24px;
+    border-radius: 4px;
+
+    p {
+      text-align: center;
+      margin: 8px 0;
+      padding: 0;
+      color: ${({ theme }) => theme.colors.background};
+    }
+  }
+
   img {
     width: 100%;
     height: auto;
