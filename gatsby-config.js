@@ -43,10 +43,6 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
-        commonmark: true,
-        footnotes: true,
-        pedantic: false,
-        gfm: true,
         gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-images',

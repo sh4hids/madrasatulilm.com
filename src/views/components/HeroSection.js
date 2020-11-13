@@ -95,7 +95,6 @@ const HeroSection = () => {
         showArrows={false}
       >
         <Item />
-        <Item bgImage="madrasatul-ilm-02_s.jpg" />
         <Item bgImage="madrasatul-ilm-03_s.jpg" />
         <Item bgImage="madrasatul-ilm-06_s.jpg" />
         <Item bgImage="madrasatul-ilm-07_s.jpg" />
