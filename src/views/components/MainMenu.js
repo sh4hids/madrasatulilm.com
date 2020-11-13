@@ -161,6 +161,9 @@ const MainMenu = ({ theme, toggleTheme }) => {
               <Link to="/study-materials/">শিক্ষাপোকরণ</Link>
             </li>
             <li>
+              <Link to="/finance/">আর্থিক ব্যাপার</Link>
+            </li>
+            <li>
               <Link to="/contact/">যোগাযোগ</Link>
             </li>
           </ul>
