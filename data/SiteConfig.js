@@ -5,7 +5,7 @@ const config = {
   siteTitleAlt: 'মাদ্‌রাসাতুল ইল্‌ম', // Alternative site title for SEO.
   siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
   siteImage: '/assets/images/madrasatul-ilm.jpg', // Logo used for SEO and manifest.
-  siteUrl: 'https://dev.madrasatulilm.com/', // Domain of your website without pathPrefix.
+  siteUrl: 'https://madrasatulilm.com/', // Domain of your website without pathPrefix.
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription: 'বিশুদ্ধ ইসলামি জ্ঞানের এক নির্ভরযোগ্য প্রতিষ্ঠান', // Website description used for RSS feeds/meta description tag.
   siteRss: '/rss.xml', // Path to the RSS file.
@@ -15,7 +15,7 @@ const config = {
   dateFromFormat: 'YYYY-MM-DD', // Date format used in the frontmatter.
   dateFormat: 'DD/MM/YYYY', // Date format for display.
   userName: 'editor', // Username to display in the author segment.
-  userEmail: 'contact@madrasatulilm.com', // Email used for RSS feed's author segment
+  userEmail: 'madrasatulilm.contact@gmail.com', // Email used for RSS feed's author segment
   userTwitter: '', // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: 'Dhaka, Bangladesh', // User location to display in the author segment.
   copyright: 'Copyright © 2019. Advanced User', // Copyright string for the footer of the website and RSS feed.
