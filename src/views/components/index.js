@@ -1,4 +1,5 @@
 export { default as Box } from './Box';
+export { default as Breadcrumb } from './Breadcrumb';
 export { default as Button } from './Button';
 export { default as BookList } from './BookList';
 export { default as Divider } from './Divider';

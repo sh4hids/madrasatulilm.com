@@ -10,7 +10,7 @@ const config = {
   siteDescription: 'বিশুদ্ধ ইসলামি জ্ঞানের এক নির্ভরযোগ্য প্রতিষ্ঠান', // Website description used for RSS feeds/meta description tag.
   siteRss: '/rss.xml', // Path to the RSS file.
   siteFBAppID: '', // FB Application ID for using app insights
-  googleAnalyticsID: 'UA-129538625-1', // GA tracking ID.
+  googleAnalyticsID: '', // GA tracking ID.
   postDefaultCategoryID: 'Blog', // Default category for posts.
   dateFromFormat: 'YYYY-MM-DD', // Date format used in the frontmatter.
   dateFormat: 'DD/MM/YYYY', // Date format for display.

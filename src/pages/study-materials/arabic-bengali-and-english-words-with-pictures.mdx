@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet';
 import {
   Box,
+  Breadcrumb,
   Divider,
   SEO,
   Text,
@@ -15,6 +16,18 @@ import {
 <Text variant="h2" textAlign="center">
   ৩ ভাষায় শব্দ শেখা, আরবী, বাংলা ও ইংরেজী (ছবিসহ) (প্রেসেন্টেশন)
 </Text>
+<Divider />
+<Breadcrumb
+  links={[
+    { url: '/', name: 'নীড়পাতা' },
+    { url: '/study-materials/', name: 'শিক্ষাপোকরণ' },
+    {
+      url: '/arabic-bengali-and-english-words-with-pictures/',
+      name: '৩ ভাষায় শব্দ শেখা, আরবী, বাংলা ও ইংরেজী',
+      isCurrentPage: true,
+    },
+  ]}
+/>
 <Divider />
 
 <Text>

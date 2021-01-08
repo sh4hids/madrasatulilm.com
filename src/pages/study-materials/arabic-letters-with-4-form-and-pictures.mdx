@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet';
 import {
   Box,
+  Breadcrumb,
   Divider,
   SEO,
   Text,
@@ -15,6 +16,18 @@ import {
 <Text variant="h2" textAlign="center">
   আরবী বর্ণ, তাদের ৪ টি রূপ ও ছবিসহ শব্দ (প্রেসেন্টেশন)
 </Text>
+<Divider />
+<Breadcrumb
+  links={[
+    { url: '/', name: 'নীড়পাতা' },
+    { url: '/study-materials/', name: 'শিক্ষাপোকরণ' },
+    {
+      url: '/arabic-letters-with-4-form-and-pictures/',
+      name: 'আরবী বর্ণ, তাদের ৪ টি রূপ ও ছবিসহ শব্দ',
+      isCurrentPage: true,
+    },
+  ]}
+/>
 <Divider />
 
 আনিস সাহেব প্রতিদিন বাচ্চাকে ‘কায়দা’ পড়ান। অনেক কষ্টে একসময় শিখিয়ে ফেললেন ২৯ টি আরবী বর্ণ। একদিন সূরা ‘ফীল’ পড়ছিলেন আনিস সাহেব। বাচ্চাকে فيل (ফীল- হাতি) শব্দটি দেখিয়ে বললেন, “দেখেছ বাবা, ف, ي আর ل মিলে হয়েছে فيل।

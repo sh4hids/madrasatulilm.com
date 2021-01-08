@@ -1,5 +1,12 @@
 import { Helmet } from 'react-helmet';
-import { Box, Divider, SEO, Text, BookList } from '../../views/components';
+import {
+  Box,
+  Breadcrumb,
+  Divider,
+  SEO,
+  Text,
+  BookList,
+} from '../../views/components';
 
 <SEO pageTitle="শিক্ষাপোকরণ" />
 <Box maxWidth={960} margin="0 auto" padding={{ xs: 3, sm: 4 }}>
@@ -8,6 +15,13 @@ import { Box, Divider, SEO, Text, BookList } from '../../views/components';
 <Text variant="h2" textAlign="center">
   শিক্ষাপোকরণ
 </Text>
+<Divider />
+<Breadcrumb
+  links={[
+    { url: '/', name: 'নীড়পাতা' },
+    { url: '/study-materials/', name: 'শিক্ষাপোকরণ', isCurrentPage: true },
+  ]}
+/>
 <Divider />
 
 <BookList

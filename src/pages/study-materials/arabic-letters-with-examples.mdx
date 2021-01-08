@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet';
 import {
   Box,
+  Breadcrumb,
   Divider,
   SEO,
   Text,
@@ -15,6 +16,18 @@ import {
 <Text variant="h2" textAlign="center">
   হাত ঘুরিয়ে আরবী হরফ লিখি, সাথে শিখি দুইটা করে শব্দ (বই)
 </Text>
+<Divider />
+<Breadcrumb
+  links={[
+    { url: '/', name: 'নীড়পাতা' },
+    { url: '/study-materials/', name: 'শিক্ষাপোকরণ' },
+    {
+      url: '/arabic-letters-with-examples/',
+      name: 'হাত ঘুরিয়ে আরবী হরফ লিখি, সাথে শিখি দুইটা করে শব্দ',
+      isCurrentPage: true,
+    },
+  ]}
+/>
 <Divider />
 
 আরবী বর্ণ বা হরফের সাথে শিশুর প্রথম পরিচয় হোক আনন্দঘন। হরফ শিখার সাথে সাথে জানুক না দুই তিনটা শব্দ। এতে অন্যান্য হরফের সাথেও পরিচয় হবে দৃঢ় ভাবে, ইন শা আল্লাহ।

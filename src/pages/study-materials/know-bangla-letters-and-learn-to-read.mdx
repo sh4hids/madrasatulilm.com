@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet';
 import {
   Box,
+  Breadcrumb,
   Divider,
   SEO,
   Text,
@@ -15,6 +16,18 @@ import {
 <Text variant="h2" textAlign="center">
   বাংলা বর্ণ চিনি ও বাংলা পড়তে শিখি (প্রেসেন্টেশন)
 </Text>
+<Divider />
+<Breadcrumb
+  links={[
+    { url: '/', name: 'নীড়পাতা' },
+    { url: '/study-materials/', name: 'শিক্ষাপোকরণ' },
+    {
+      url: '/know-bangla-letters-and-learn-to-read/',
+      name: 'বাংলা বর্ণ চিনি ও বাংলা পড়তে শিখি',
+      isCurrentPage: true,
+    },
+  ]}
+/>
 <Divider />
 
 শুধু বাংলা বর্ণমালার বই দিয়ে বাচ্চাদের বাংলা শিখানো ইদানিং খুব কষ্টসাধ্য বিষয়। তাই আমরা তৈরি করেছি কিছু মজার প্রেসেন্টেশন। এনিমেশন+সাউন্ড+গেইম থাকায় বাচ্চারা বেশ মজা করে এখন শিখতে পারবে বাংলা বর্ণমালা ও শব্দ গঠন প্রক্রিয়া, ইন শা আল্লাহ।

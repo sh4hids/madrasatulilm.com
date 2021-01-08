@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import { Box, Divider, SEO, Text } from '../views/components';
+import { Box, Breadcrumb, Divider, SEO, Text } from '../views/components';
 
 <SEO pageTitle="সুবিধাসমূহ" />
 <Box maxWidth={960} margin="0 auto" padding={{ xs: 3, sm: 4 }}>
@@ -8,6 +8,13 @@ import { Box, Divider, SEO, Text } from '../views/components';
 <Text variant="h2" textAlign="center">
   সুবিধাসমূহ
 </Text>
+<Divider />
+<Breadcrumb
+  links={[
+    { url: '/', name: 'নীড়পাতা' },
+    { url: '/facilities/', name: 'সুবিধাসমূহ', isCurrentPage: true },
+  ]}
+/>
 <Divider />
 
 মাদ্রাসাতুল ইলম এ থেকে নিম্নোক্ত সুবিধাগুলো পেতে পারেন:

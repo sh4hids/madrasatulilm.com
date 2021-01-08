@@ -11,18 +11,18 @@ const BookList = ({ books = [] }) => {
     <Flex mx={[0, -2]} flexWrap="wrap" mt={4}>
       {books.map(
         (book, index) =>
-        index < 6 && (
-          <Box key={book.title} width={[1, 1 / 3]} px={3} py={3}>
-            <SummaryCard height={320}>
-              <div>
-                <Text variant="h3">{book.title}</Text>
+          index < 6 && (
+            <Box key={book.title} width={[1, 1 / 3]} px={3} py={3}>
+              <SummaryCard height={320}>
+                <div>
+                  <Text variant="h3">{book.title}</Text>
 
-                <Link to={book.link}>
-                  <Button variant="primary">ডাউনলোড</Button>
-                </Link>
-              </div>
-            </SummaryCard>
-          </Box>
+                  <Link to={`${book.link}/`}>
+                    <Button variant="primary">বিস্তারিত</Button>
+                  </Link>
+                </div>
+              </SummaryCard>
+            </Box>
           )
       )}
     </Flex>

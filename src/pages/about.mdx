@@ -1,13 +1,21 @@
 import { Helmet } from 'react-helmet';
-import { Box, Divider, SEO, Text } from '../views/components';
+import { Box, Breadcrumb, Divider, SEO, Text } from '../views/components';
 
 <SEO pageTitle="পরিচিতি" />
 
 <Box maxWidth={960} margin="0 auto" padding={{ xs: 3, sm: 4 }}>
 
+
 <Text variant="h2" textAlign="center">
   মাদ্‌রাসাতুল ইল্‌ম এর সংক্ষিপ্ত পরিচিতি
 </Text>
+<Divider />
+<Breadcrumb
+  links={[
+    { url: '/', name: 'নীড়পাতা' },
+    { url: '/about/', name: 'পরিচিতি', isCurrentPage: true },
+  ]}
+/>
 <Divider />
 
 আল-কুর্‌আনুল কারীমের হিফয কার্যক্রমকে কেন্দ্র করে বাংলাদেশে গড়ে উঠেছে অসংখ্য প্রতিষ্ঠান। কিন্তু আমরা লক্ষ্য করেছি, প্রতিষ্ঠানগুলোর বেশিরভাগই আল-কুর্‌আনের মূল উদ্দেশ্যকে পূরণ করতে ব্যর্থ। পবিত্র গ্রন্থ আল-কুর্‌আন নাযিলের মূল উদ্দেশ্য সম্পর্কে আল্লাহ বলেন:
@@ -57,3 +65,4 @@ import { Box, Divider, SEO, Text } from '../views/components';
 স্কুল পড়ুয়া ছাত্ররা মাদ্রাসাতুল ইলম এ এসে কুর্‌আন তিলাওয়াত ও আরবী ভাষা শিক্ষা করতে পারবে।
 
 </Box>
+
