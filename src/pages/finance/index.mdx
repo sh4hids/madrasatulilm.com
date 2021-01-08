@@ -1,0 +1,33 @@
+import { Helmet } from 'react-helmet';
+import { Link } from 'gatsby';
+import { Box, Breadcrumb, Divider, SEO, Text } from '../../views/components';
+
+<SEO pageTitle="আর্থিক ব্যাপার" />
+<Box maxWidth={960} margin="0 auto" padding={{ xs: 3, sm: 4 }}>
+  <Text variant="h2" textAlign="center">
+    আর্থিক ব্যাপার
+  </Text>
+  <Divider />
+  <Breadcrumb
+    links={[
+      { url: '/', name: 'নীড়পাতা' },
+      { url: '/finance/', name: 'আর্থিক ব্যাপার', isCurrentPage: true },
+    ]}
+  />
+  <Divider mb={3} />
+  <div>
+    ১. <Link to="/finance/expense-to-study-here/">এখানে পড়তে খরচ কত হবে</Link>
+  </div>
+  <div>
+    ২.{' '}
+    <Link to="/finance/your-donation-to-madrassa/">
+      মাদ্রাসায় আপনার সাদাকাহ ও যাকাতে
+    </Link>
+  </div>
+  <div>
+    ৩.{' '}
+    <Link to="/finance/business-of-madrassa/">
+      মাদ্রাসার আয়ের উৎস যখন ব্যবসা
+    </Link>
+  </div>
+</Box>
