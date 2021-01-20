@@ -17,3 +17,4 @@ export { default as SocialShareIcon } from './SocialShareIcon';
 export { default as SummaryCard } from './SummaryCard';
 export { default as TagList } from './TagList';
 export { default as Text } from './Text';
+export { default as Video } from './Video';
