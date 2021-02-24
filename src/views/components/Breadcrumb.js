@@ -19,21 +19,19 @@ const BreacrumbLinkActive = styled.p`
   display: inline;
 `;
 
-const Breadcrumb = ({ links = [] }) => {
-  return (
-    <BreacrumbContainer>
-      {links.map((link, index) => (
-        <>
-          {!link.isCurrentPage ? (
-            <BreacrumbLink to={link.url}>{link.name}</BreacrumbLink>
-          ) : (
-            <BreacrumbLinkActive>{link.name}</BreacrumbLinkActive>
-          )}
-          {index < links.length - 1 && <span>></span>}
-        </>
-      ))}
-    </BreacrumbContainer>
-  );
-};
+const Breadcrumb = ({ links = [] }) => (
+  <BreacrumbContainer>
+    {links.map((link, index) => (
+      <span key={index}>
+        {!link.isCurrentPage ? (
+          <BreacrumbLink to={link.url}>{link.name}</BreacrumbLink>
+        ) : (
+          <BreacrumbLinkActive>{link.name}</BreacrumbLinkActive>
+        )}
+        {index < links.length - 1 && <span>></span>}
+      </span>
+    ))}
+  </BreacrumbContainer>
+);
 
 export default Breadcrumb;
