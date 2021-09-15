@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
-import { Box, Breadcrumb, Divider, SEO, Text } from '../../../../views/components';
+import { Box, Breadcrumb, Divider, SEO, Text, Flex } from '../../../../views/components';
 import books from '../../../../data/books';
 
 <SEO pageTitle={books[2].name} />
@@ -19,18 +19,21 @@ import books from '../../../../data/books';
   />
   <Divider />
 
-<img src={`/assets/images/${books[2].image}`} alt={books[2].name} />
+<Flex mx={[0, -2]} flexWrap="wrap" mt={3}>
+  <Box  width={[1, 1 / 2]} px={3} py={3}>        
+    <img src={`/assets/images/${books[2].image}`} alt={books[2].name} />
+  </Box>
+  <Box  width={[1, 1 / 2]} px={3} py={3}>
+    <Text variant="raw" html={books[2].description} />
+    <Text>
+    মূল্য: <br />
+    - {books[2].prices.hardCover} <br />
+    {books[2].prices.paperback ? `- ${books[2].prices.paperback}` : ''}
+    </Text>
+  </Box>
+</Flex>
 
-<Text variant="raw" html={books[2].description} />
-
-<Text>
-মূল্য: <br />
-- {books[2].prices.hardCover} <br />
-{books[2].prices.paperback ? `- ${books[2].prices.paperback}` : ''}
-
-</Text>
-
-<Text>
+<Text mt={3} textAlign="center" fontWeight="bold">
 Call & Whatsapp for order: 01914-723676
 </Text>
 

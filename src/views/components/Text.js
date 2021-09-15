@@ -135,6 +135,12 @@ const RawHTML = styled.div`
     width: 100%;
     height: auto;
   }
+
+  p {
+    :first-child {
+      margin-top: 0;
+    }
+  }
 `;
 
 const Text = ({ variant, theme, children, html, ...props }) => {

@@ -3,10 +3,10 @@ import { Link } from 'gatsby';
 import { Box, Breadcrumb, Divider, SEO, Text, Flex } from '../../../../views/components';
 import books from '../../../../data/books';
 
-<SEO pageTitle={books[1].name} />
+<SEO pageTitle={books[8].name} />
 <Box maxWidth={960} margin="0 auto" padding={{ xs: 3, sm: 4 }}>
   <Text variant="h2" textAlign="center">
-    {books[1].name}
+    {books[8].name}
   </Text>
   <Divider />
   <Breadcrumb
@@ -21,14 +21,14 @@ import books from '../../../../data/books';
 
 <Flex mx={[0, -2]} flexWrap="wrap" mt={3}>
   <Box  width={[1, 1 / 2]} px={3} py={3}>        
-    <img src={`/assets/images/${books[1].image}`} alt={books[1].name} />
+    <img src={`/assets/images/${books[8].image}`} alt={books[8].name} />
   </Box>
   <Box  width={[1, 1 / 2]} px={3} py={3}>
-    <Text variant="raw" html={books[1].description} />
+    <Text variant="raw" html={books[8].description} />
     <Text>
     মূল্য: <br />
-    - {books[1].prices.hardCover} <br />
-    {books[1].prices.paperback ? `- ${books[1].prices.paperback}` : ''}
+    - {books[8].prices.hardCover} <br />
+    {books[8].prices.paperback ? `- ${books[8].prices.paperback}` : ''}
     </Text>
   </Box>
 </Flex>
