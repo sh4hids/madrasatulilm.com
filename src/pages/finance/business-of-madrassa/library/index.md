@@ -3,17 +3,17 @@ import { Link } from 'gatsby';
 import { Box, Breadcrumb, Divider, SEO, Text } from '../../../../views/components';
 import books from '../../../../data/books';
 
-<SEO pageTitle="মাদ্রাসাস্থ পাঠাগারের বইসমূহ" />
+<SEO pageTitle="বুক শপের বইসমূহ" />
 <Box maxWidth={960} margin="0 auto" padding={{ xs: 3, sm: 4 }}>
   <Text variant="h2" textAlign="center">
-    মাদ্রাসাস্থ পাঠাগারের বইসমূহ
+    বুক শপের বইসমূহ
   </Text>
   <Divider />
   <Breadcrumb
     links={[
       { url: '/', name: 'নীড়পাতা' },
       { url: '/finance/', name: 'আর্থিক ব্যাপার' },
-      { url: '/business-of-madrassa/', name: 'মাদ্রাসার আয়ের উৎস যখন ব্যবসা' },
+      { url: '/business-of-madrassa/', name: 'মাদরাসাতুল ইলম ফুড এন্ড বুক শপ' },
     ]}
   />
   <Divider />
