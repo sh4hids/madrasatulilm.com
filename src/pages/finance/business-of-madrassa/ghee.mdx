@@ -1,0 +1,52 @@
+import { Helmet } from 'react-helmet';
+import { Link } from 'gatsby';
+import {
+  Box,
+  Breadcrumb,
+  Divider,
+  SEO,
+  Text,
+  Flex,
+} from '../../../views/components';
+
+<SEO pageTitle="ঘি" />
+<Box maxWidth={960} margin="0 auto" padding={{ xs: 3, sm: 4 }}>
+  <Text variant="h2" textAlign="center">
+    ঘি
+  </Text>
+  <Divider />
+  <Breadcrumb
+    links={[
+      { url: '/', name: 'নীড়পাতা' },
+      { url: '/finance/', name: 'আর্থিক ব্যাপার' },
+      { url: '/finance/business-of-madrassa/', name: 'মাদ্রাসার আয়ের উৎস যখন ব্যবসা' }
+    ]}
+  />
+  <Divider />
+
+<Flex mx={[0, -2]} flexWrap="wrap" mt={3}>
+  <Box width={[1, 1 / 2]} px={3} py={3}>
+    <img src={`/assets/images/ঘি.jpg`} alt="ঘি" />
+  </Box>
+  <Box width={[1, 1 / 2]} px={3} py={3}>
+    <Text>
+      বেশ কয়েক বছর ধরেই মাদ্‌রাসাতুল ইলম কিছু খাদ্যপণ্যের নির্ভেজাল উৎপাদন ও
+      ব্যবসার সাথে জড়িত আছে। এই প্রথম খাদ্যপণ্যগুলো অনলাইনে বিক্রির জন্য
+      উন্মুক্ত করা হচ্ছে, যাতে মানুষের কাছে নির্ভেজাল খাদ্যপণ্যগুলো সহজলভ্য হয়,
+      আর এর লভ্যাংশ দ্বারা উপকৃত হয় মাদ্‌রাসাতুল ইলম।
+    </Text>
+    <Text variant="h6">এমনই একটি পণ্য, ঘি: </Text>
+    <Text>খাটি দুধের সর (ক্রিম) থেকে তৈরি করা হয় এই ঘি। একবার খেলে ইন শা আল্লাহ বার-বার খেতে ইচ্ছা করবে।</Text>
+    <Text>
+      মূল্য: <br />- ২৫০ গ্রাম ৩০০ টাকা <br />- ৫০০ গ্রাম ৬০০ টাকা
+    </Text>
+    <Text>সাথে ডেলিভারী চার্জ: 60~120 টাকা</Text>
+
+  </Box>
+</Flex>
+
+<Text mt={3} textAlign="center" fontWeight="bold">
+  Call & Whatsapp for order: 01914-723676
+</Text>
+
+</Box>
