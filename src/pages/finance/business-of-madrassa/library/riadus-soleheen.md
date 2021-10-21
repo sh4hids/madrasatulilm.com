@@ -13,24 +13,23 @@ import books from '../../../../data/books';
     links={[
       { url: '/', name: 'নীড়পাতা' },
       { url: '/finance/', name: 'আর্থিক ব্যাপার' },
-      { url: '/finance/business-of-madrassa/', name: 'মাদ্রাসার আয়ের উৎস যখন ব্যবসা' },
+      { url: '/finance/business-of-madrassa/', name: 'মাদরাসাতুল ইলম ফুড এন্ড বুক শপ' },
       { url: '/finance/business-of-madrassa/library/', name: 'মাদ্রাসাস্থ পাঠাগারের বইসমূহ' },
     ]}
   />
   <Divider />
 
 <Flex mx={[0, -2]} flexWrap="wrap" mt={3}>
-  <Box  width={[1, 1 / 2]} px={3} py={3}>        
-    <img src={`/assets/images/${books[25].image}`} alt={books[25].name} />
-  </Box>
-  <Box  width={[1, 1 / 2]} px={3} py={3}>
-    <Text variant="raw" html={books[25].description} />
-    <Text>
-    মূল্য: <br />
-    - {books[25].prices.hardCover} <br />
-    {books[25].prices.paperback ? `- ${books[25].prices.paperback}` : ''}
-    </Text>
-  </Box>
+<Box width={[1, 1 / 2]} px={3} py={3}>  
+ <img src={`/assets/images/${books[25].image}`} alt={books[25].name} />
+</Box>
+<Box width={[1, 1 / 2]} px={3} py={3}>
+<Text variant="raw" html={books[25].description} />
+<Text>
+মূল্য: <br /> - {books[25].prices.hardCover} <br />
+{books[25].prices.paperback ? `- ${books[25].prices.paperback}` : ''}
+</Text>
+</Box>
 </Flex>
 
 <Text mt={3} textAlign="center" fontWeight="bold">
