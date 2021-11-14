@@ -13,7 +13,7 @@ const BookList = ({ books = [] }) => {
         (book, index) =>
           index < 6 && (
             <Box key={book.title} width={[1, 1 / 3]} px={3} py={3}>
-              <SummaryCard height={320}>
+              <SummaryCard height={[320, 320, 400]}>
                 <div>
                   <Text variant="h3">{book.title}</Text>
 
