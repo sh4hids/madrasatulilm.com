@@ -54,7 +54,6 @@ const MenuContainer = styled.div`
       }
       &:last-child {
         margin-right: 20px;
-        padding-right: 24px;
         border-right: 1px solid ${({ theme }) => theme.colors.dark1};
       }
     }
@@ -146,9 +145,6 @@ const MainMenu = ({ theme, toggleTheme }) => {
         <span>
           <ul>
             <li>
-              <Link to="/">নীড়পাতা</Link>
-            </li>
-            <li>
               <Link to="/about/">পরিচিতি</Link>
             </li>
             {/* <li>
@@ -159,6 +155,9 @@ const MainMenu = ({ theme, toggleTheme }) => {
             </li>
             <li>
               <Link to="/study-materials/">শিক্ষাপোকরণ</Link>
+            </li>
+            <li>
+              <Link to="/finance/business-of-madrassa/">ফুড এন্ড বুক শপ</Link>
             </li>
             <li>
               <Link to="/finance/">আর্থিক ব্যাপার</Link>

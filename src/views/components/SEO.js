@@ -5,7 +5,7 @@ import config from '../../../data/SiteConfig';
 
 class SEO extends Component {
   render() {
-    const { postNode, postPath, postSEO, pageTitle } = this.props;
+    const { postNode, postPath, postSEO, pageTitle, seoImage } = this.props;
     let title = pageTitle;
     let description;
     let image;
@@ -25,6 +25,10 @@ class SEO extends Component {
     }
 
     image = urljoin(config.siteUrl, config.pathPrefix, image);
+
+    if (seoImage) {
+      image = urljoin(config.siteUrl, seoImage);
+    }
     const blogURL = urljoin(config.siteUrl, config.pathPrefix);
     const schemaOrgJSONLD = [
       {

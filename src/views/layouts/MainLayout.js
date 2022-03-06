@@ -12,7 +12,9 @@ const MainLayout = (props) => {
   const { children, theme, variant = '' } = props;
 
   return (
-    <ThemeProvider theme={themes[theme.name]}>
+    <ThemeProvider
+      theme={theme && theme.name ? themes[theme.name] : themes.dark}
+    >
       <GlobalStyle />
       <>
         <Helmet>
