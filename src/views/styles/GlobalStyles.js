@@ -222,6 +222,34 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  table {
+    width: 100%;
+  }
+
+  table, th, td {
+    border: 1px solid ${({ theme }) => theme.colors.text};
+  }
+
+  td {
+    padding: 16px;
+
+    a.table-book-cover {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      width: 240px;
+      height: auto;
+
+      @media only screen and (max-width: 576px) {
+        width: 100px;
+      
+      }
+    }
+  }
+
 `;
 
 export default GlobalStyle;
