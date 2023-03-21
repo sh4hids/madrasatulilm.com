@@ -6,13 +6,15 @@ import Flex from './Flex';
 import SummaryCard from './SummaryCard';
 import Text from './Text';
 
-const BookList = ({ books = [] }) => (
-  <Flex mx={[0, -2]} flexWrap="wrap" mt={4}>
+const CardList = ({ books = [] }) => (
+  <Flex mx={[0, -2]} flexWrap="wrap" mt={4} justifyContent="center">
     {books.map((book) => (
       <Box key={book.title} width={[1, 1 / 3]} px={3} py={3}>
-        <SummaryCard height={[320, 320, 400]}>
+        <SummaryCard height={[180, 180, 240]}>
           <div>
-            <Text variant="h3">{book.title}</Text>
+            <Text variant="h3" mt={0}>
+              {book.title}
+            </Text>
 
             <Link to={`${book.link}/`}>
               <Button variant="primary">বিস্তারিত</Button>
@@ -24,4 +26,4 @@ const BookList = ({ books = [] }) => (
   </Flex>
 );
 
-export default BookList;
+export default CardList;

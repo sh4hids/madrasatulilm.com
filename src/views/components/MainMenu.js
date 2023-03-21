@@ -54,7 +54,6 @@ const MenuContainer = styled.div`
       }
       &:last-child {
         margin-right: 20px;
-        border-right: 1px solid ${({ theme }) => theme.colors.dark1};
       }
     }
   }

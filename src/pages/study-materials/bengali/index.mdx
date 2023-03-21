@@ -1,0 +1,36 @@
+import { Helmet } from 'react-helmet';
+import {
+  Box,
+  Breadcrumb,
+  Divider,
+  SEO,
+  Text,
+  BookList,
+} from '../../../views/components';
+
+<SEO pageTitle="বাংলা" />
+<Box maxWidth={960} margin="0 auto" padding={{ xs: 3, sm: 4 }}>
+
+<Text variant="h2" textAlign="center">
+  বাংলা
+</Text>
+<Divider />
+<Breadcrumb
+  links={[
+    { url: '/', name: 'নীড়পাতা' },
+    { url: '/study-materials/', name: 'শিক্ষাপোকরণ' },
+    { url: '/study-materials/bengali', name: 'বাংলা', isCurrentPage: true },
+  ]}
+/>
+<Divider />
+
+<BookList
+  books={[
+    {
+      title: 'বাংলা বর্ণ চিনি ও বাংলা পড়তে শিখি (প্রেসেন্টেশন)',
+      link: '/study-materials/bengali/know-and-learn-bengali-letters',
+    },
+  ]}
+/>
+
+</Box>

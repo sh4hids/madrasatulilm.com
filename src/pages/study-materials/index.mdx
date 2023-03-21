@@ -5,7 +5,7 @@ import {
   Divider,
   SEO,
   Text,
-  BookList,
+  CardList,
 } from '../../views/components';
 
 <SEO pageTitle="শিক্ষাপোকরণ" />
@@ -23,23 +23,31 @@ import {
 />
 <Divider />
 
-<BookList
+<CardList
   books={[
     {
-      title: 'হাত ঘুরিয়ে আরবী হরফ লিখি, সাথে শিখি দুইটা করে শব্দ (বই)',
-      link: '/study-materials/arabic-letters-with-examples',
+      title: 'পাঠ্যক্রম',
+      link: '/study-materials/syllabus',
     },
     {
-      title: "আরবী বর্ণ চিনি ও আরবী পড়তে শিখি (কায়দা মাক্কিয়াহ'র প্রেসেন্টেশন)",
-      link: '/study-materials/arabic-letters-with-4-form-and-pictures',
+      title: 'আরবী',
+      link: '/study-materials/arabic',
     },
     {
-      title: '৩ ভাষায় শব্দ শেখা, আরবী, বাংলা ও ইংরেজী (ছবিসহ) (প্রেসেন্টেশন)',
-      link: '/study-materials/arabic-bengali-and-english-words-with-pictures',
+      title: 'বাংলা',
+      link: '/study-materials/bengali',
     },
     {
-      title: 'বাংলা বর্ণ চিনি ও বাংলা পড়তে শিখি (প্রেসেন্টেশন)',
-      link: '/study-materials/know-bangla-letters-and-learn-to-read',
+      title: 'ইংরেজী',
+      link: '/study-materials/english',
+    },
+    {
+      title: 'গণিত',
+      link: '/study-materials/mathematics',
+    },
+    {
+      title: 'কুর্‌আন ও হাদীস',
+      link: '/study-materials/quran-and-hadith',
     },
     {
       title: 'হাদীস শিখি ইউশার সাথে',
