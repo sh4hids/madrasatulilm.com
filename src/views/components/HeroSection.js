@@ -95,12 +95,17 @@ const HeroSection = () => {
         showArrows={false}
       >
         <Item />
-        <Item bgImage="madrasatul-ilm-03_s.jpg" />
-        <Item bgImage="madrasatul-ilm-06_s.jpg" />
-        <Item bgImage="madrasatul-ilm-07_s.jpg" />
-        <Item bgImage="madrasatul-ilm-08_s.jpg" />
-        <Item bgImage="madrasatul-ilm-09_s.jpg" />
-        <Item bgImage="madrasatul-ilm-10_s.jpg" />
+        <Item bgImage="madrasatul-ilm-01.jpg" />
+        <Item bgImage="madrasatul-ilm-02.jpg" />
+        <Item bgImage="madrasatul-ilm-03.jpg" />
+        <Item bgImage="madrasatul-ilm-04.jpg" />
+        <Item bgImage="madrasatul-ilm-05.jpg" />
+        <Item bgImage="madrasatul-ilm-06.jpg" />
+        <Item bgImage="madrasatul-ilm-07.jpg" />
+        <Item bgImage="madrasatul-ilm-08.jpg" />
+        <Item bgImage="madrasatul-ilm-09.jpg" />
+        <Item bgImage="madrasatul-ilm-10.jpg" />
+        <Item bgImage="madrasatul-ilm-11.jpg" />
       </Carousel>
     </HeroContainer>
   );
