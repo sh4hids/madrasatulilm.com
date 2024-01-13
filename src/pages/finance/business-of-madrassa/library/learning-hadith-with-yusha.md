@@ -22,6 +22,7 @@ links={[
 <Flex mx={[0, -2]} flexWrap="wrap" mt={3}>
 <Box width={[1, 1 / 2]} px={3} py={3}>  
  <img src={`/assets/images/${books[0].image}`} alt={books[0].name} />
+<img src={`/assets/images/হাদীস শিখি ইউশার সাথে eng.jpeg`} alt={books[0].name} />
 </Box>
 <Box width={[1, 1 / 2]} px={3} py={3}>
 <Text variant="raw" html={books[0].description} />
