@@ -1,12 +1,29 @@
 import styled from 'styled-components';
-import { space, layout, position, color, typography } from 'styled-system';
+import {
+  compose,
+  space,
+  color,
+  layout,
+  position,
+  typography,
+  border,
+  flexbox,
+  grid,
+  background,
+} from 'styled-system';
 
 const Box = styled.div`
-  ${space};
-  ${layout};
-  ${position};
-  ${color};
-  ${typography};
+  ${compose(
+    space,
+    color,
+    layout,
+    position,
+    typography,
+    border,
+    flexbox,
+    grid,
+    background
+  )};
 `;
 
 export default Box;

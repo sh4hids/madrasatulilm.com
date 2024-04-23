@@ -30,11 +30,47 @@ links={[
 মূল্য: <br /> - {books[0].prices.hardCover} <br />
 {books[0].prices.paperback ? `- ${books[0].prices.paperback}` : ''}
 </Text>
+
+
+<Text mt={3} fontWeight="bold">
+Call & Whatsapp for order: 01914-723676
+</Text>
+
 </Box>
 </Flex>
 
-<Text mt={3} textAlign="center" fontWeight="bold">
-Call & Whatsapp for order: 01914-723676
-</Text>
+<Box display="flex" flexWrap="wrap" mx={-3}>
+
+<Box p={3} width={[1, 1, 1 / 3]}>
+<img src={`/assets/images/Yusha-Cover-Bng.png`} alt={books[0].name} />
+</Box>
+
+<Box p={3} width={[1, 1, 1 / 3]}>
+<img src={`/assets/images/Yuhsa-2-Cover-Wide.png`} alt={books[0].name} />
+</Box>
+
+<Box p={3} width={[1, 1, 1 / 3]}>
+<img src={`/assets/images/Yusha-Cover-Eng.png`} alt={books[0].name} />
+</Box>
+
+<Box p={3} width={[1, 1, 1 / 3]}>
+<img src={`/assets/images/yusha-1-2.png`} alt={books[0].name} />
+</Box>
+
+<Box p={3} width={[1, 1, 1 / 3]}>
+<img src={`/assets/images/Yusha-2-inner-1.png`} alt={books[0].name} />
+</Box>
+
+<Box p={3} width={[1, 1, 1 / 3]}>
+<img src={`/assets/images/Hadis1-Inner-mockup2.png`} alt={books[0].name} />
+</Box>
+
+<Box p={3} width={[1, 1, 1 / 3]}>
+<img src={`/assets/images/Book-mockup.png`} alt={books[0].name} />
+</Box>
+
+
+</Box>
+
 
 </Box>
