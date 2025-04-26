@@ -28,7 +28,7 @@ const Breadcrumb = ({ links = [] }) => (
         ) : (
           <BreacrumbLinkActive>{link.name}</BreacrumbLinkActive>
         )}
-        {index < links.length - 1 && <span>></span>}
+        {index < links.length - 1 && <span>{'>'}</span>}
       </span>
     ))}
   </BreacrumbContainer>

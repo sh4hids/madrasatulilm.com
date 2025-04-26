@@ -1,0 +1,62 @@
+import { Helmet } from 'react-helmet';
+import {
+  Box,
+  Breadcrumb,
+  Divider,
+  SEO,
+  Text,
+  BookList,
+  Button,
+} from '../../../views/components';
+
+<SEO pageTitle="দু'আ সমূহের উচ্চারণ" />
+<Box maxWidth={960} margin="0 auto" padding={{ xs: 3, sm: 4 }}>
+
+<Text variant="h2" textAlign="center">
+  দু'আ সমূহের উচ্চারণ
+</Text>
+<Divider />
+<Breadcrumb
+  links={[
+    { url: '/', name: 'নীড়পাতা' },
+    { url: '/study-materials/', name: 'শিক্ষাপোকরণ' },
+    {
+      url: '/study-materials/quran-and-hadith',
+      name: 'কুর্‌আন ও হাদীস',
+      isCurrentPage: true,
+    },
+  ]}
+/>
+<Divider />
+
+<Box textAlign="center" mt={32} mb={3}>
+  <a
+    href="https://drive.google.com/drive/folders/1emsfidzL2-jblt-lKdun_rIuyp7-aIdW?usp=sharing"
+    target="_blank"
+    rel="noreferrer noopener"
+  >
+    <Button variant="primary">দু'আ সম্ভার-১ এর দু’আগুলোর উচ্চারণ</Button>
+  </a>
+</Box>
+
+<Box textAlign="center" mb={3}>
+  <a
+    href="https://drive.google.com/drive/folders/1s5r0ZmrFp_dLVwj_sQVOVtvp78DK1XBZ?usp=sharing"
+    target="_blank"
+    rel="noreferrer noopener"
+  >
+    <Button variant="primary">দু'আ সম্ভার-২ এর দু’আগুলোর উচ্চারণ</Button>
+  </a>
+</Box>
+
+<Box textAlign="center" mb={3}>
+  <a
+    href="https://drive.google.com/drive/folders/1I1QVLhemkwJv4AuhHOC2fCFCMYq_ofPX?usp=sharing"
+    target="_blank"
+    rel="noreferrer noopener"
+  >
+    <Button variant="primary">দু'আ সম্ভার-৩ এর দু’আগুলোর উচ্চারণ</Button>
+  </a>
+</Box>
+
+</Box>

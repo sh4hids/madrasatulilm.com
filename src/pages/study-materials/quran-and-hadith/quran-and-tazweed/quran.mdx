@@ -1,0 +1,88 @@
+import { Helmet } from 'react-helmet';
+import {
+  Box,
+  Breadcrumb,
+  Divider,
+  SEO,
+  Text,
+  BookList,
+  Button,
+} from '../../../../views/components';
+
+<SEO pageTitle="কুর’আন" />
+<Box maxWidth={960} margin="0 auto" padding={{ xs: 3, sm: 4 }}>
+
+<Text variant="h2" textAlign="center">
+  কুর’আন
+</Text>
+<Divider />
+<Breadcrumb
+  links={[
+    { url: '/', name: 'নীড়পাতা' },
+    { url: '/study-materials/', name: 'শিক্ষাপোকরণ' },
+    {
+      url: '/study-materials/quran-and-hadith',
+      name: 'কুর্‌আন ও হাদীস',
+    },
+    {
+      url: '/study-materials/quran-and-hadith/quran-and-tazweed',
+      name: 'কুর’আন ও তাজউইদ',
+      isCurrentPage: true,
+    },
+  ]}
+/>
+<Divider />
+
+<Text>কুর্‌আন মাশক (ক্বারী আব্দুল ক্বাদীর উসমান এর কণ্ঠে)</Text>
+
+<Box textAlign="center">
+  <a
+    href="https://drive.google.com/drive/folders/1f7zYQY2ov_PCy8OD5n-xMytC2huuBlY0?usp=sharing"
+    target="_blank"
+    rel="noreferrer noopener"
+  >
+    <Button variant="primary">জুয আম্মা (৩০তম পারা) Audio ডাউনলোড</Button>
+  </a>
+</Box>
+
+<Box textAlign="center" my={3}>
+  <a
+    href="https://drive.google.com/drive/folders/1CoJNuAxl4ZGeBO983jVUSl_Rysfa2Q7d?usp=sharing"
+    target="_blank"
+    rel="noreferrer noopener"
+  >
+    <Button variant="primary">জুয তাবারাক (২৯তম পারা) Audio ডাউনলোড</Button>
+  </a>
+</Box>
+
+<Box textAlign="center" mt={32}>
+  <a
+    href="https://drive.google.com/file/d/1Es6WlvTDqNhArEiSoY9Y0PfXGzHJauf0/view?usp=sharing"
+    target="_blank"
+    rel="noreferrer noopener"
+  >
+    <Button variant="primary">জুয আম্মা (৩০তম পারা) PDF ডাউনলোড</Button>
+  </a>
+</Box>
+
+<Box textAlign="center" mt={3}>
+  <a
+    href="https://drive.google.com/file/d/1TrceQOPkIqwYQ9jZhO6xOMddVcTqhipr/view?usp=sharing"
+    target="_blank"
+    rel="noreferrer noopener"
+  >
+    <Button variant="primary">জুয তাবারাক (২৯তম পারা) PDF ডাউনলোড</Button>
+  </a>
+</Box>
+
+<Box textAlign="center" mt={3}>
+  <a
+    href="https://drive.google.com/file/d/1SUvscfRQdQtZ4QdTTl9kOQ9wBRObOs1t/view?usp=sharing"
+    target="_blank"
+    rel="noreferrer noopener"
+  >
+    <Button variant="primary">সূরা বাক্বারাহ, কাহফ ও মূলক PDF ডাউনলোড</Button>
+  </a>
+</Box>
+
+</Box>
