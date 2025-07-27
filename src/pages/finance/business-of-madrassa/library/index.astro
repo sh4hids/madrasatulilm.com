@@ -1,0 +1,39 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+const books = await getCollection('books');
+
+console.log(books);
+---
+
+<PageLayout
+    title="বুক শপের বইসমূহ"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/finance/business-of-madrassa',
+            label: 'ফুড এন্ড বুক শপ',
+        },
+        {
+            url: '/finance/business-of-madrassa/library',
+            label: 'বুক শপের বইসমূহ',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-3 gap-6">
+        {
+            books.map((item) => (
+                <LinkCard
+                    title={item.data.name}
+                    link={`/finance/business-of-madrassa/library/${item.data.slug}`}
+                />
+            ))
+        }
+    </div>
+</PageLayout>

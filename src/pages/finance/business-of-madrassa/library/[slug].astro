@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets';
+import PageLayout from '@/layouts/PageLayout.astro';
+import Text from '@/components/Text.astro';
+import { getCollection, render } from 'astro:content';
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+    const books = await getCollection('books');
+    return books.map((book) => ({
+        params: { slug: book.id },
+        props: { book },
+    }));
+}
+// 2. For your template, you can get the entry directly from the prop
+const { book } = Astro.props;
+
+console.log(book);
+---
+
+<PageLayout
+    title={book.data.name}
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/finance/business-of-madrassa',
+            label: 'ফুড এন্ড বুক শপ',
+        },
+        {
+            url: '/finance/business-of-madrassa/library',
+            label: 'বুক শপের বইসমূহ',
+        },
+        {
+            url: `/finance/business-of-madrassa/library/${book.id}`,
+            label: book.data.name,
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-9 gap-4">
+        <div class="col-span-4">
+            <Image
+                src={`/images/${book.data.image}`}
+                class="h-auto w-full rounded-md border-1"
+                alt="বরই ফুলের মধু"
+                width="100"
+                height="100"
+            />
+        </div>
+        <div class="col-span-9 col-start-5">
+            <div class="*:pt-4 *:first:pt-0" set:html={book.data.description} />
+            <Text variant="h5">মূল্য:</Text>
+            {
+                book.data.prices.hardCover && (
+                    <Text> - {book.data.prices.hardCover} </Text>
+                )
+            }
+            {
+                book.data.prices.paperback && (
+                    <Text> - {book.data.prices.paperback} </Text>
+                )
+            }
+        </div>
+    </div>
+</PageLayout>

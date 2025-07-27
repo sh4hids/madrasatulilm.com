@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import Text from '@/components/Text.astro';
+import oil from '@/assets/images/mustard-oil.jpg';
+import PageLayout from '@/layouts/PageLayout.astro';
+---
+
+<PageLayout
+    title="সরিষার তেল"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/finance/business-of-madrassa',
+            label: 'ফুড এন্ড বুক শপ',
+        },
+        {
+            url: '/finance/business-of-madrassa/honey',
+            label: 'মধু',
+        },
+        {
+            url: '/finance/business-of-madrassa/mustard-oil',
+            label: 'সরিষার তেল',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-2 gap-4">
+        <div>
+            <Image
+                src={oil}
+                class="h-auto w-full rounded-md border-1"
+                alt="সরিষার তেল"
+            />
+        </div>
+        <div>
+            <Text class={'pt-0'}>
+                বেশ কয়েক বছর ধরেই মাদ্‌রাসাতুল ইলম কিছু খাদ্যপণ্যের নির্ভেজাল
+                উৎপাদন ও ব্যবসার সাথে জড়িত আছে। এই প্রথম খাদ্যপণ্যগুলো অনলাইনে
+                বিক্রির জন্য উন্মুক্ত করা হচ্ছে, যাতে মানুষের কাছে নির্ভেজাল
+                খাদ্যপণ্যগুলো সহজলভ্য হয়, আর এর লভ্যাংশ দ্বারা উপকৃত হয়
+                মাদ্‌রাসাতুল ইলম।
+            </Text>
+            <Text variant="h5">এমনই একটি পণ্য, সরিষার তেল:</Text>
+            <Text
+                >মোটর চালিত ঘানি হতে এই বিশুদ্ধ সরিশার তেল সংগ্রহ করা হয়।
+            </Text>
+            <Text variant="h5">মূল্য:</Text>
+            <Text> - ২৫০ গ্রাম ৩০০ টাকা </Text>
+            <Text> - ৫ লিটার ১০৫০ টাকা</Text>
+            <Text class={'font-bold'}>সাথে ডেলিভারী চার্জ: 60~120 টাকা</Text>
+        </div>
+    </div>
+</PageLayout>

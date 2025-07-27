@@ -1,0 +1,72 @@
+---
+import HeaderLink from '@/components/HeaderLink.astro';
+// import MobileNavbar from '@/components/MobileNavbar.astro';
+// import Search from '@/components/Search.astro';
+import ModeToggle from '@/components/ModeToggle.tsx';
+
+// import logo from '../assets/images/logo-base.svg';
+import { isActivePath } from '@/lib/utils';
+import { Home } from 'lucide-react';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header
+    class="supports-backdrop-blur:bg-background/80 bg-background/80 sticky top-0 z-40 w-full border-b py-4 backdrop-blur lg:py-4"
+>
+    <div class="mx-auto flex items-center justify-between px-6 text-lg">
+        <a href={`/`} class="flex items-center no-underline"
+            >মাদ্‌রাসাতুল ইল্‌ম</a
+        >
+        <nav class="hidden lg:flex">
+            <HeaderLink href={`/`} isActive={isActivePath(currentPath, '')}>
+                নীড়পাতা
+            </HeaderLink>
+            <HeaderLink
+                href={`/about`}
+                isActive={isActivePath(currentPath, 'about')}
+            >
+                পরিচিতি
+            </HeaderLink>
+            <HeaderLink
+                href={`/facilities`}
+                isActive={isActivePath(currentPath, 'facilities')}
+            >
+                সুবিধাসমূহ
+            </HeaderLink>
+            <HeaderLink
+                href={`/study-materials`}
+                isActive={isActivePath(currentPath, 'study-materials', false)}
+            >
+                শিক্ষাপোকরণ
+            </HeaderLink>
+            <HeaderLink
+                href={`/finance/business-of-madrassa`}
+                isActive={isActivePath(
+                    currentPath,
+                    'business-of-madrassa',
+                    false
+                )}
+            >
+                ফুড এন্ড বুক শপ
+            </HeaderLink>
+            <HeaderLink
+                href={`/finance`}
+                isActive={isActivePath(currentPath, 'finance')}
+                isLastItem={true}
+            >
+                আর্থিক ব্যাপার
+            </HeaderLink>
+            <HeaderLink
+                href={`/contact`}
+                isActive={isActivePath(currentPath, 'contact')}
+                isLastItem={true}
+            >
+                যোগাযোগ
+            </HeaderLink>
+        </nav>
+        <div class="flex items-center *:pr-4 last:*:pr-0">
+            <ModeToggle client:load />
+        </div>
+    </div>
+</header>

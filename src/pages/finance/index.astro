@@ -1,0 +1,37 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+---
+
+<PageLayout
+    title="আর্থিক ব্যাপার"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/finance',
+            label: 'আর্থিক ব্যাপার',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <ul
+        role="list"
+        class="[&_a]:text-primary *:mb-1.5 *:before:mr-1.5 *:before:content-[attr(data-icon)]"
+    >
+        <li data-icon="১.">
+            <a href="/finance/expense-to-study-here"> এখানে পড়তে খরচ কত হবে </a>
+        </li>
+        <li data-icon="২.">
+            <a href="/finance/your-donation-to-madrassa">
+                মাদ্রাসায় আপনার সাদাকাহ ও যাকাত
+            </a>
+        </li>
+        <li data-icon="৩.">
+            <a href="/finance/business-of-madrassa">
+                মাদরাসাতুল ইলম ফুড এন্ড বুক শপ
+            </a>
+        </li>
+    </ul>
+</PageLayout>

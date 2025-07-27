@@ -1,0 +1,90 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import Text from '@/components/Text.astro';
+import { Button } from '@/components/ui/button';
+import PageLayout from '@/layouts/PageLayout.astro';
+import { YouTube } from '@astro-community/astro-embed-youtube';
+import { getCollection } from 'astro:content';
+
+const links = await getCollection('links');
+const currentPath = Astro.url.pathname.split('/').pop();
+
+const items = links.find((item) => item.id === currentPath)?.data ?? [];
+---
+
+<PageLayout
+    title="ছবি দেখে আরবী শব্দ শেখা"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/study-materials/arabic',
+            label: 'আরবী',
+        },
+        {
+            url: '/study-materials/arabic/learn-arabic-by-watching-pictures',
+            label: 'ছবি দেখে আরবী শব্দ শেখা',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <Text class="pt-0">
+        ছোটবেলায় আমরা মানব দেহ, ফল-ফুল, পশু-পাখি কত কিছুর নাম বাংলা আর ইংরেজীতে
+        এক সাথে মুখস্থ করেছি। এই দুই ভাষার সাথে শুধু আরবীটা জুড়ে দিলে কিন্তু
+        আমাদের কোনো ক্ষতি হত না, বরং বাড়ত ৩ ভাষার উপই দক্ষতা।
+    </Text>
+    <Text>
+        আর তাই মাদ্রাসাতুল ইল্‌ম প্রেসেন্টেশন আকারে (ছবি সহ) তৈরি করেছে ৩ ভাষার
+        শব্দ ভান্ডার। ৩ ভাষা বললেও বেশিরভাগ প্রেসেন্টেশনেই বাংলা শব্দ ব্যবহার
+        করা হয় নি। কারণ, এটা ছবি দেখেই বোঝা যায়।
+    </Text>
+    <Text>
+        বাংলা ব্যবহার না করার আরেকটা কারণ, অনেকেই বাচ্চাকে এভাবে পড়ান, <span
+            class="font-arabic text-primary text-xl"
+        >
+            قِطٌّ
+        </span> মানে "বিড়াল", যা আসলে ভাষা শেখার সঠিক পদ্ধতি নয়। বরং, একটা বিড়ালের
+        ছবি দেখিয়ে বলা যেতে পারে, <span class="font-arabic text-primary text-xl"
+            >هٰذَا قِطٌّ</span
+        >।
+    </Text>
+    <Text
+        >এভাবে প্রশ্নও করা যেতে পারে, <span
+            class="font-arabic text-primary text-xl">مَا هَذَا؟</span
+        >। তাহলেই বাচ্চারা প্রয়োজনীয় শব্দগুলো আরবী ভাষাতেই আলাদা আলাদা ভাবে
+        শিখবে, ইন শা আল্লাহ।</Text
+    >
+    <div class="mt-6 grid grid-cols-3 gap-6">
+        {
+            items.map((item, index) => (
+                <LinkCard
+                    title={item.title}
+                    link={item.link}
+                    buttonTitle="ডাউনলোড"
+                />
+            ))
+        }
+    </div>
+    <div class="mt-6 text-center">
+        <a
+            href="https://drive.google.com/drive/folders/1KZ9NIleTDDOkPDl1nFrVE-ramXsFjoRA?usp=sharing"
+            target="_blank"
+            referrerpolicy="no-referrer"
+        >
+            <Button>আরবী Work sheet (PDF) ডাউনলোড</Button>
+        </a>
+    </div>
+    <div class="mt-6 text-center *:mx-auto *:rounded-md *:border-1">
+        <YouTube
+            id="gQY-yuevN_E"
+            posterQuality="max"
+            params="list=PLN6GIGge5un9gKYMXvM0YtQrlO5_TlxGA"
+        />
+    </div>
+</PageLayout>

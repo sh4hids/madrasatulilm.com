@@ -1,0 +1,47 @@
+---
+import Text from '@/components/Text.astro';
+import { Button } from '@/components/ui/button';
+import PageLayout from '@/layouts/PageLayout.astro';
+---
+
+<PageLayout
+    title="হাত ঘুরিয়ে আরবী হরফ লিখি, সাথে শিখি দুইটা করে শব্দ (বই)"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/study-materials/arabic',
+            label: 'আরবী',
+        },
+        {
+            url: '/study-materials/arabic/arabic-letters-with-examples',
+            label: 'হাত ঘুরিয়ে আরবী হরফ লিখি, সাথে শিখি দুইটা করে শব্দ (বই)',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <Text class="pt-0">
+        আরবী বর্ণ বা হরফের সাথে শিশুর প্রথম পরিচয় হোক আনন্দঘন। হরফ শিখার সাথে
+        সাথে জানুক না দুই তিনটা শব্দ। এতে অন্যান্য হরফের সাথেও পরিচয় হবে দৃঢ়
+        ভাবে, ইন শা আল্লাহ।
+    </Text>
+    <Text>
+        আর তাই GoodWord প্রকাশনীর একটি বই এর সহযোগীতা নিয়ে ‘মাদ্রাসাতুল ইল্‌ম’
+        তৈরি করেছে এই বইটি। বইটি এখনই প্রিন্ট করে দিতে পারেন আপনার শিশুর হাতে।
+    </Text>
+    <div class="mt-6 text-center">
+        <a
+            href="https://drive.google.com/file/d/1f5BM-WDWsXfdF4LotQ9z_sHEGQum5Axe/view?usp=sharing"
+            target="_blank"
+            referrerpolicy="no-referrer"
+        >
+            <Button>ডাউনলোড</Button>
+        </a>
+    </div>
+</PageLayout>

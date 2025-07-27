@@ -1,0 +1,70 @@
+---
+import { ChevronRight } from 'lucide-react';
+
+import type { BreadcrumbItem } from '@/components/types';
+
+import {
+    DropdownMenu,
+    DropdownMenuTrigger,
+    DropdownMenuContent,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuItem,
+} from '@radix-ui/react-dropdown-menu';
+import BreadcrumbDropdown from './BreadcrumbDropdown';
+
+interface Props {
+    items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+let subMenu: BreadcrumbItem[] = [];
+if (items.length > 3) {
+    subMenu = items.slice(1, items.length - 1);
+}
+---
+
+<ul class="flex gap-2">
+    {
+        subMenu.length > 0 ? (
+            <>
+                <li>
+                    <a
+                        href={items[0].url}
+                        class={`no-underline ${items[0].isCurrentPage ? `text-foreground pointer-events-none` : `text-foreground/60`} `}
+                    >
+                        {items[0].label}
+                    </a>
+
+                    <ChevronRight className="inline-block text-foreground/60 relative -top-0.25" />
+                </li>
+
+                <BreadcrumbDropdown client:load menuItems={subMenu} />
+
+                <li>
+                    <a
+                        href={items[items.length - 1].url}
+                        class={`no-underline ${items[items.length - 1].isCurrentPage ? `text-foreground pointer-events-none` : `text-foreground/60`} `}
+                    >
+                        {items[items.length - 1].label}
+                    </a>
+                </li>
+            </>
+        ) : (
+            items.map((item, index) => (
+                <li>
+                    <a
+                        href={item.url}
+                        class={`no-underline ${item.isCurrentPage ? `text-foreground pointer-events-none` : `text-foreground/60`} `}
+                    >
+                        {item.label}
+                    </a>
+                    {index !== items.length - 1 && (
+                        <ChevronRight className="inline-block text-foreground/60 relative -top-0.25" />
+                    )}
+                </li>
+            ))
+        )
+    }
+</ul>

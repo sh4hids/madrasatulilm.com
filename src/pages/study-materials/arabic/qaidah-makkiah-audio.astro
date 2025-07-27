@@ -1,0 +1,49 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+const links = await getCollection('links');
+const currentPath = Astro.url.pathname.split('/').pop();
+
+const audios = links.find((item) => item.id === currentPath)?.data ?? [];
+---
+
+<PageLayout
+    title="কায়দা মাক্কিয়াহ বইয়ের Audio Sound ডাউনলোড"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/study-materials/arabic',
+            label: 'আরবী',
+        },
+        {
+            url: '/study-materials/arabic/arabic-letters-with-4-form-and-pictures',
+            label: 'আরবী বর্ণ চিনি ও আরবী পড়তে শিখি',
+        },
+        {
+            url: '/study-materials/arabic/qaidah-makkiah-audio',
+            label: 'কায়দা মাক্কিয়াহ বইয়ের Audio Sound ডাউনলোড',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-3 gap-6">
+        {
+            audios.map((item) => (
+                <LinkCard
+                    title={item.title}
+                    link={item.link}
+                    buttonTitle="ডাউনলোড"
+                />
+            ))
+        }
+    </div>
+</PageLayout>

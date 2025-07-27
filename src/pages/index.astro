@@ -1,12 +1,49 @@
 ---
-import "../styles/global.css";
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ContainerLayout from '@/layouts/ContainerLayout.astro';
+import HeroSection from '@/components/HeroSection.astro';
+import Text from '@/components/Text.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout meta={{ title: 'Home' }}>
+    <ContainerLayout>
+        <HeroSection />
+        <Text variant="h3" class="text-center">পাঠ কার্যক্রম</Text>
+
+        <ul
+            role="list"
+            class="mt-6 grid grid-cols-3 gap-6 *:mb-1.5 *:rounded-md *:border-x *:border-x-(--pattern-fg) *:bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] *:bg-[size:10px_10px] *:bg-fixed *:py-6 *:text-center *:ring-2 *:[--pattern-fg:var(--color-gray-950)]/5 *:before:mr-1.5 *:before:content-[attr(data-icon)] *:max-lg:hidden *:dark:[--pattern-fg:var(--color-white)]/10"
+        >
+            <li data-icon="📕">নূরানী ও নাযেরা প্রোগ্রাম</li>
+            <li data-icon="📕">হিফয প্রোগ্রাম</li>
+            <li data-icon="📕">সহীহ তিলাওয়াত</li>
+            <li data-icon="📕">আরবী ভাষা শিক্ষা</li>
+            <li data-icon="📕">সাধারণ শিক্ষা</li>
+            <li data-icon="📕">পার্ট টাইম মক্তব</li>
+        </ul>
+
+        <Text variant="h3" class="text-center">সুবিধাসমূহ</Text>
+
+        <ul
+            role="list"
+            class="mt-6 *:mb-1.5 *:before:mr-1.5 *:before:content-[attr(data-icon)]"
+        >
+            <li data-icon="✦">বালক শাখার জন্য আবাসিক/অনাবাসিক সুবিধা</li>
+            <li data-icon="✦">
+                বালিকা শাখায় অনাবাসিক ব্যবস্থা, তবে মহিলা শিক্ষিকা দ্বারা
+                পাঠদান
+            </li>
+            <li data-icon="✦">
+                বালক-বালিকা উভয় শাখায় পাঠদানের জন্য নিরিবিলি পরিবেশ
+            </li>
+            <li data-icon="✦">আবাসিক ছাত্রদের জন্য উন্নত খাবারের ব্যবস্থা</li>
+            <li data-icon="✦">শিক্ষার্থীদের খেলাধুলার জন্য নিরাপদ স্থান</li>
+            <li data-icon="✦">
+                সি-সি ক্যামেরা দ্বারা সার্বিক পরিস্থিত নজরদারীতে রাখা
+            </li>
+            <li data-icon="✦">
+                আবাসিক ছাত্রদের দেখাশোনার জন্য একজন তত্ত্বাবধয়কের অবস্থান
+            </li>
+        </ul>
+    </ContainerLayout>
+</BaseLayout>
