@@ -1,0 +1,144 @@
+---
+import { Menu } from 'lucide-react';
+
+import HeaderLink from '@/components/HeaderLink.astro';
+import { isActivePath } from '@/lib/utils';
+import { Button } from './ui/button';
+
+const currentPath = Astro.url.pathname;
+---
+
+<mobile-navbar class="lg:hidden">
+    <Button variant="outline" size="icon" data-open-menu>
+        <Menu
+            className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"
+        />
+
+        <span class="sr-only">Open Menu</span>
+    </Button>
+
+    <dialog
+        data-mobile-navbar
+        aria-label="mobile-menu"
+        class="backdrop:bg-surface-2 backdrop:bg-opacity-80 open:animate-fade-in fixed inset-0 z-10 w-full max-w-[unset] rounded outline-none"
+    >
+        <nav class="menu-dialog-frame block">
+            <button
+                data-close-menu
+                class="bg-surface-1 absolute top-5 right-5 rounded border px-2 py-1 text-xs outline-none"
+            >
+                Esc
+            </button>
+            <HeaderLink href={`/`} isActive={isActivePath(currentPath, '')}>
+                নীড়পাতা
+            </HeaderLink>
+            <HeaderLink
+                href={`/about`}
+                isActive={isActivePath(currentPath, 'about')}
+            >
+                পরিচিতি
+            </HeaderLink>
+            <HeaderLink
+                href={`/facilities`}
+                isActive={isActivePath(currentPath, 'facilities')}
+            >
+                সুবিধাসমূহ
+            </HeaderLink>
+            <HeaderLink
+                href={`/study-materials`}
+                isActive={isActivePath(currentPath, 'study-materials', false)}
+            >
+                শিক্ষাপোকরণ
+            </HeaderLink>
+            <HeaderLink
+                href={`/finance/business-of-madrassa`}
+                isActive={isActivePath(
+                    currentPath,
+                    'business-of-madrassa',
+                    false
+                )}
+            >
+                ফুড এন্ড বুক শপ
+            </HeaderLink>
+            <HeaderLink
+                href={`/finance`}
+                isActive={isActivePath(currentPath, 'finance')}
+                isLastItem={true}
+            >
+                আর্থিক ব্যাপার
+            </HeaderLink>
+            <HeaderLink
+                href={`/contact`}
+                isActive={isActivePath(currentPath, 'contact')}
+                isLastItem={true}
+            >
+                যোগাযোগ
+            </HeaderLink>
+        </nav>
+    </dialog>
+</mobile-navbar>
+
+<script>
+    class MobileNavbar extends HTMLElement {
+        constructor() {
+            super();
+
+            const openBtn = this.querySelector<HTMLButtonElement>(
+                'button[data-open-menu]'
+            )!;
+            const closeBtn = this.querySelector<HTMLButtonElement>(
+                'button[data-close-menu]'
+            )!;
+            const dialog = this.querySelector<HTMLDialogElement>(
+                'dialog[data-mobile-navbar]'
+            )!;
+            const dialogFrame = this.querySelector('.menu-dialog-frame')!;
+
+            const onWindowClick = (event: MouseEvent) => {
+                // check if it's a link
+                const isLink = 'href' in (event.target || {});
+                // make sure the click is either a link or outside of the dialog
+                if (
+                    isLink ||
+                    (document.body.contains(event.target as Node) &&
+                        !dialogFrame.contains(event.target as Node))
+                )
+                    closeModal();
+            };
+
+            const openModal = (event?: MouseEvent) => {
+                dialog.showModal();
+                // this.querySelector('input')?.focus();
+                event?.stopPropagation();
+                window.addEventListener('click', onWindowClick);
+            };
+
+            const closeModal = () => {
+                if (dialog.open) {
+                    dialog.close();
+                    window.removeEventListener('click', onWindowClick);
+                }
+            };
+
+            openBtn.addEventListener('click', openModal);
+            openBtn.disabled = false;
+            closeBtn.addEventListener('click', closeModal);
+
+            // Listen for `/` keyboard shortcut
+            window.addEventListener('keydown', (e) => {
+                if (e.key === '/' && !dialog.open) {
+                    openModal();
+                    e.preventDefault();
+                }
+            });
+
+            // close modal and clear input on view-transtion
+            document.addEventListener('astro:after-swap', () => {
+                // close the modal & remove event listener on body
+                closeModal();
+            });
+        }
+    }
+
+    customElements.define('mobile-navbar', MobileNavbar);
+</script>
