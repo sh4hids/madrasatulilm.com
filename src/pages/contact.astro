@@ -23,8 +23,8 @@ import PageLayout from '@/layouts/PageLayout.astro';
     ]}
 >
     <div class="grid grid-cols-3 gap-4">
-        <div class="col-span-2">
-            <Text variant="h5">বালক শাখা ও অফিস</Text>
+        <div class="col-span-3 md:col-span-2">
+            <Text variant="h5" class={'pt-0'}>বালক শাখা ও অফিস</Text>
             <Text>
                 ২১৯/৪/খ, ভিপি রোড, দক্ষিণ পীরেরবাগ (৬০ ফিট ভাঙ্গাব্রীজ সংলগ্ন),
                 ঢাকা-১২১৬
@@ -43,7 +43,7 @@ import PageLayout from '@/layouts/PageLayout.astro';
                 ></Text
             >
         </div>
-        <div class="col-start-3 pt-4">
+        <div class="col-span-3 col-start-1 pt-4 md:col-span-1 md:col-start-3">
             <Image src={mapImage} class="h-auto w-full" alt="address-map" />
         </div>
     </div>

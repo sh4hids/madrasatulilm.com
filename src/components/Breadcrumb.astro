@@ -3,14 +3,6 @@ import { ChevronRight } from 'lucide-react';
 
 import type { BreadcrumbItem } from '@/components/types';
 
-import {
-    DropdownMenu,
-    DropdownMenuTrigger,
-    DropdownMenuContent,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuItem,
-} from '@radix-ui/react-dropdown-menu';
 import BreadcrumbDropdown from './BreadcrumbDropdown';
 
 interface Props {
@@ -25,7 +17,7 @@ if (items.length > 3) {
 }
 ---
 
-<ul class="flex gap-2">
+<ul class="gap-2 *:inline-block md:flex">
     {
         subMenu.length > 0 ? (
             <>

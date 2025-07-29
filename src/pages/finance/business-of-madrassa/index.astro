@@ -50,7 +50,7 @@ const items = [
         সংগ্রহ করেন বিভিন্ন পণ্য যেমন- মধু, তেল, ঘি, ইত্যাদি। পন্যগুলো সম্পর্কে
         জানতে ও অর্ডার করতে নিচে ক্লিক করুন।
     </Text>
-    <div class="mt-6 grid grid-cols-3 gap-6">
+    <div class="mt-4 grid grid-cols-1 gap-4 md:mt-6 md:grid-cols-3 md:gap-6">
         {
             items.map((item, index) => (
                 <LinkCard title={item.title} link={item.link} />

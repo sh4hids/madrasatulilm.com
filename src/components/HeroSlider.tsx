@@ -26,7 +26,7 @@ export default function HeroSlider() {
                     delay: 3000,
                 }),
             ]}
-            className="w-full max-w-xs"
+            className="w-full md:max-w-xs"
         >
             <CarouselContent>
                 {Array.from({ length: 5 }).map((_, index) => (

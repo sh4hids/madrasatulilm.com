@@ -9,10 +9,9 @@ import Text from '@/components/Text.astro';
     <ContainerLayout>
         <HeroSection />
         <Text variant="h3" class="text-center">পাঠ কার্যক্রম</Text>
-
         <ul
             role="list"
-            class="mt-6 grid grid-cols-3 gap-6 *:mb-1.5 *:rounded-md *:border-x *:border-x-(--pattern-fg) *:bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] *:bg-[size:10px_10px] *:bg-fixed *:py-6 *:text-center *:ring-2 *:[--pattern-fg:var(--color-gray-950)]/5 *:before:mr-1.5 *:before:content-[attr(data-icon)] *:max-lg:hidden *:dark:[--pattern-fg:var(--color-white)]/10"
+            class="mt-6 grid grid-cols-1 gap-4 *:rounded-md *:border-x *:border-x-(--pattern-fg) *:bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] *:bg-[size:10px_10px] *:bg-fixed *:py-6 *:text-center *:ring-2 *:[--pattern-fg:var(--color-gray-950)]/5 *:before:mr-1.5 *:before:content-[attr(data-icon)] md:grid-cols-3 md:gap-6 *:dark:[--pattern-fg:var(--color-white)]/10"
         >
             <li data-icon="📕">নূরানী ও নাযেরা প্রোগ্রাম</li>
             <li data-icon="📕">হিফয প্রোগ্রাম</li>
@@ -22,8 +21,7 @@ import Text from '@/components/Text.astro';
             <li data-icon="📕">পার্ট টাইম মক্তব</li>
         </ul>
 
-        <Text variant="h3" class="text-center">সুবিধাসমূহ</Text>
-
+        <Text variant="h3" class="pt-6 text-center">সুবিধাসমূহ</Text>
         <ul
             role="list"
             class="mt-6 *:mb-1.5 *:before:mr-1.5 *:before:content-[attr(data-icon)]"

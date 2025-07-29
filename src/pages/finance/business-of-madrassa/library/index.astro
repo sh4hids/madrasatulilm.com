@@ -4,8 +4,6 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import { getCollection } from 'astro:content';
 
 const books = await getCollection('books');
-
-console.log(books);
 ---
 
 <PageLayout

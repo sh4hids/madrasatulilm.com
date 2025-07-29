@@ -1,0 +1,87 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+import Text from '@/components/Text.astro';
+
+const items = [
+    {
+        title: 'হাদীস ও দু’আ সম্ভার-১',
+        link: 'https://drive.google.com/file/d/1UFEsmfSsL7cBJC05QRqGhq9i4tRUm5PT/view?usp=sharing',
+    },
+    {
+        title: 'হাদীস ও দু’আ সম্ভার-২',
+        link: 'https://drive.google.com/file/d/1Zx-e_rGlxDK6JKGTHEWwtFLN1yj5Shtt/view?usp=sharing',
+    },
+    {
+        title: 'হাদীস ও দু’আ সম্ভার-৩',
+        link: 'https://drive.google.com/file/d/1zGRRF24Y94s_rpdf5HXDR0prj62MQSD5/view?usp=sharing',
+    },
+    {
+        title: 'হাদীস ও দু’আ সম্ভার-৪',
+        link: 'https://madrasatulilm.com/study-materials/quran-and-hadith/hadith-and-dua-collection/#',
+    },
+];
+
+const items2 = [
+    {
+        title: 'হাদীসগুলোর উচ্চারণ',
+        link: 'https://drive.google.com/drive/folders/1hIpV_XLvBxz9EbViW0OVid9ktrTs2GSD?usp=sharing',
+    },
+    {
+        title: 'দু’আ সমূহের উচ্চারণ',
+        link: 'https://madrasatulilm.com/study-materials/arabic/quran-and-hadith/dua-audio',
+    },
+];
+---
+
+<PageLayout
+    title="হাদীস ও দু’আ সম্ভার"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/study-materials/quran-and-hadith',
+            label: 'কুর্‌আন ও হাদীস',
+        },
+        {
+            url: '/study-materials/quran-and-hadith/hadith-and-dua-collection',
+            label: 'হাদীস ও দু’আ সম্ভার',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <Text class={'pt-0'}>
+        ছোটদের জন্য সহজে মুখস্থ রাখা যায় এমন সহজ ও ছোট-ছোট হাদীস আর ‘হিসনুল
+        মুসলিম’ থেকে বাছাই করা দু’আ নিয়ে আমরা করেছি এই ‘হাদীস ও দু’আ সম্ভার’
+        নামক সংকলনগুলো।
+    </Text>
+    <div class="mt-6 grid grid-cols-2 gap-6">
+        {
+            items.map((item, index) => (
+                <LinkCard
+                    title={item.title}
+                    link={item.link}
+                    buttonTitle="ডাউনলোড"
+                />
+            ))
+        }
+    </div>
+    <Text variant="h3">উচ্চারণ</Text>
+    <div class="mt-6 grid grid-cols-2 gap-6">
+        {
+            items2.map((item, index) => (
+                <LinkCard
+                    title={item.title}
+                    link={item.link}
+                    buttonTitle="ডাউনলোড"
+                />
+            ))
+        }
+    </div>
+</PageLayout>

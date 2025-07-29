@@ -60,7 +60,7 @@ const items = links.find((item) => item.id === currentPath)?.data ?? [];
         >। তাহলেই বাচ্চারা প্রয়োজনীয় শব্দগুলো আরবী ভাষাতেই আলাদা আলাদা ভাবে
         শিখবে, ইন শা আল্লাহ।</Text
     >
-    <div class="mt-6 grid grid-cols-3 gap-6">
+    <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
         {
             items.map((item, index) => (
                 <LinkCard

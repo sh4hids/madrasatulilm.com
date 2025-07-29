@@ -1,0 +1,46 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+
+const items = [
+    {
+        title: 'কুর্‌আন',
+        link: '/study-materials/quran-and-hadith/quran-and-tazweed/quran',
+    },
+    {
+        title: 'তাজউইদ',
+        link: '/study-materials/quran-and-hadith/quran-and-tazweed/tazweed',
+    },
+];
+---
+
+<PageLayout
+    title="কুর’আন ও তাজউইদ"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/study-materials/quran-and-hadith',
+            label: 'কুর্‌আন ও হাদীস',
+        },
+        {
+            url: '/study-materials/quran-and-hadith/quran-and-tazweed',
+            label: 'কুর’আন ও তাজউইদ',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+        {
+            items.map((item, index) => (
+                <LinkCard title={item.title} link={item.link} />
+            ))
+        }
+    </div>
+</PageLayout>
