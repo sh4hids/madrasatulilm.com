@@ -1,5 +1,5 @@
 ---
-import LinkCard from '@/components/LinkCard.astro';
+import BookCard from '@/components/BookCard.astro';
 import PageLayout from '@/layouts/PageLayout.astro';
 import { getCollection } from 'astro:content';
 
@@ -24,14 +24,7 @@ const books = await getCollection('books');
         },
     ]}
 >
-    <div class="grid grid-cols-3 gap-6">
-        {
-            books.map((item) => (
-                <LinkCard
-                    title={item.data.name}
-                    link={`/finance/business-of-madrassa/library/${item.data.slug}`}
-                />
-            ))
-        }
+    <div class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+        {books.map((item) => <BookCard bookInfo={item.data} />)}
     </div>
 </PageLayout>

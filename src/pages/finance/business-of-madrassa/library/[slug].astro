@@ -39,8 +39,8 @@ console.log(book);
         },
     ]}
 >
-    <div class="grid grid-cols-9 gap-4">
-        <div class="col-span-4">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-9 md:gap-6">
+        <div class="md:col-span-4">
             <Image
                 src={`/images/${book.data.image}`}
                 class="h-auto w-full rounded-md border-1"
@@ -49,7 +49,7 @@ console.log(book);
                 height="100"
             />
         </div>
-        <div class="col-span-9 col-start-5">
+        <div class="md:col-span-9 md:col-start-5">
             <div class="*:pt-4 *:first:pt-0" set:html={book.data.description} />
             <Text variant="h5">মূল্য:</Text>
             {

@@ -1,22 +1,44 @@
 ---
+import { Image } from 'astro:assets';
+import BookInfo from './BookInfo';
 import Text from './Text.astro';
-import { Button } from './ui/button';
 
 interface Props {
-    title: string;
-    link: string;
-    buttonTitle?: string;
-    shouldCenter?: boolean;
+    bookInfo: {
+        name: string;
+        slug: string;
+        image: string;
+        description: string;
+        prices: {
+            hardCover?: string;
+            paperback?: string;
+        };
+    };
 }
 
-const { title, link, buttonTitle, shouldCenter } = Astro.props;
+const {
+    bookInfo: { name, slug, image, description, prices },
+} = Astro.props;
 ---
 
 <div
-    class={`bg-accent p-6 flex md:h-56 flex-col items-center justify-center gap-2 rounded-md border-1 ${shouldCenter ? 'col-start-2' : ''}`}
+    class="flex flex-col overflow-hidden rounded-md border-1 border-x border-b border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 dark:[--pattern-fg:var(--color-white)]/10"
 >
-    <Text variant="h4" class="text-center">{title}</Text>
-    <a href={link} target={link.startsWith('https://') ? '_blank' : '_self'}>
-        <Button variant="link">{buttonTitle ?? 'বিস্তারিত'}</Button>
+    <a
+        href={`/finance/business-of-madrassa/library/${slug}`}
+        target={slug.startsWith('https://') ? '_blank' : '_self'}
+    >
+        <div class="flex h-40 items-center justify-center overflow-hidden">
+            <Image
+                src={`/images/${image}`}
+                class="h-full w-auto"
+                alt="বরই ফুলের মধু"
+                width="100"
+                height="100"
+            />
+        </div>
+        <div class="bg-accent/72 p-4">
+            <BookInfo client:load name={name} description={description} />
+        </div>
     </a>
 </div>
