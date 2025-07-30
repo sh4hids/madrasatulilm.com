@@ -1,5 +1,21 @@
 ---
+import LinkCard from '@/components/LinkCard.astro';
 import PageLayout from '@/layouts/PageLayout.astro';
+
+const items = [
+    {
+        title: 'এখানে পড়তে খরচ কত হবে',
+        link: '/finance/expense-to-study-here',
+    },
+    {
+        title: 'মাদ্রাসায় আপনার সাদাকাহ ও যাকাত',
+        link: '/finance/your-donation-to-madrassa',
+    },
+    {
+        title: 'মাদরাসাতুল ইলম ফুড এন্ড বুক শপ',
+        link: '/finance/business-of-madrassa',
+    },
+];
 ---
 
 <PageLayout
@@ -16,22 +32,11 @@ import PageLayout from '@/layouts/PageLayout.astro';
         },
     ]}
 >
-    <ul
-        role="list"
-        class="[&_a]:text-primary *:mb-1.5 *:before:mr-1.5 *:before:content-[attr(data-icon)]"
-    >
-        <li data-icon="১.">
-            <a href="/finance/expense-to-study-here"> এখানে পড়তে খরচ কত হবে </a>
-        </li>
-        <li data-icon="২.">
-            <a href="/finance/your-donation-to-madrassa">
-                মাদ্রাসায় আপনার সাদাকাহ ও যাকাত
-            </a>
-        </li>
-        <li data-icon="৩.">
-            <a href="/finance/business-of-madrassa">
-                মাদরাসাতুল ইলম ফুড এন্ড বুক শপ
-            </a>
-        </li>
-    </ul>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+        {
+            items.map((item, index) => (
+                <LinkCard title={item.title} link={item.link} />
+            ))
+        }
+    </div>
 </PageLayout>
