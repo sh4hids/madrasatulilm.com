@@ -1,12 +1,8 @@
 ---
 import HeaderLink from '@/components/HeaderLink.astro';
-// import MobileNavbar from '@/components/MobileNavbar.astro';
-// import Search from '@/components/Search.astro';
 import ModeToggle from '@/components/ModeToggle.tsx';
 
-// import logo from '../assets/images/logo-base.svg';
 import { isActivePath } from '@/lib/utils';
-import { Home } from 'lucide-react';
 import MobileNavbar from './MobileNavbar.astro';
 
 const currentPath = Astro.url.pathname;
@@ -18,14 +14,11 @@ const currentPath = Astro.url.pathname;
     <div
         class="mx-auto flex max-w-6xl items-center justify-between px-4 text-lg md:px-6"
     >
-        <a href={`/`} class="flex items-center no-underline"
+        <a href={`/`} class="text-primary flex items-center no-underline"
             >মাদ্‌রাসাতুল ইল্‌ম</a
         >
         <div class="flex items-center">
             <nav class="hidden lg:flex">
-                <HeaderLink href={`/`} isActive={isActivePath(currentPath, '')}>
-                    নীড়পাতা
-                </HeaderLink>
                 <HeaderLink
                     href={`/about`}
                     isActive={isActivePath(currentPath, 'about')}
@@ -60,7 +53,12 @@ const currentPath = Astro.url.pathname;
                 </HeaderLink>
                 <HeaderLink
                     href={`/finance`}
-                    isActive={isActivePath(currentPath, 'finance')}
+                    isActive={isActivePath(
+                        currentPath,
+                        'finance',
+                        false,
+                        'business-of-madrassa'
+                    )}
                     isLastItem={true}
                 >
                     আর্থিক ব্যাপার

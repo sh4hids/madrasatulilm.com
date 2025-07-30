@@ -8,9 +8,23 @@ export function cn(...inputs: ClassValue[]) {
 export const isActivePath = (
     currentPath: string,
     path: string,
-    isExact = true
+    exactMatch = true,
+    notIncludes = ''
 ) => {
-    return isExact
-        ? currentPath.split('/').pop() === path
-        : currentPath.includes(path);
+    if (exactMatch === false) {
+        if (notIncludes) {
+            return (
+                !currentPath.includes(notIncludes) && currentPath.includes(path)
+            );
+        }
+
+        return currentPath.includes(path);
+    }
+
+    return (
+        currentPath
+            .replace(/(^\/+|\/+$)/gm, '')
+            .split('/')
+            .pop() === path
+    );
 };

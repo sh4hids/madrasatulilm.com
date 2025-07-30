@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import PageLayout from '@/layouts/PageLayout.astro';
 import Text from '@/components/Text.astro';
 import { getCollection, render } from 'astro:content';
-// 1. Generate a new path for every collection entry
+
 export async function getStaticPaths() {
     const books = await getCollection('books');
     return books.map((book) => ({
@@ -11,10 +11,8 @@ export async function getStaticPaths() {
         props: { book },
     }));
 }
-// 2. For your template, you can get the entry directly from the prop
-const { book } = Astro.props;
 
-console.log(book);
+const { book } = Astro.props;
 ---
 
 <PageLayout

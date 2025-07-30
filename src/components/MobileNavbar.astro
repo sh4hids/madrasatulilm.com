@@ -10,9 +10,7 @@ const currentPath = Astro.url.pathname;
 
 <mobile-navbar class="lg:hidden">
     <Button variant="outline" size="icon" data-open-menu>
-        <Menu
-            className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"
-        />
+        <Menu className="h-[1.2rem] w-[1.2rem]" />
 
         <span class="sr-only">Open Menu</span>
     </Button>
@@ -20,9 +18,9 @@ const currentPath = Astro.url.pathname;
     <dialog
         data-mobile-navbar
         aria-label="mobile-menu"
-        class="backdrop:bg-surface-2 backdrop:bg-opacity-80 open:animate-fade-in fixed inset-0 z-10 w-full max-w-[unset] rounded outline-none"
+        class="backdrop:bg-background/80 open:animate-fade-in fixed inset-0 z-10 w-full max-w-[unset] rounded outline-none"
     >
-        <nav class="menu-dialog-frame block">
+        <nav class="menu-dialog-frame bg-background text-foreground block">
             <button
                 data-close-menu
                 class="bg-surface-1 absolute top-5 right-5 rounded border px-2 py-1 text-xs outline-none"
@@ -62,7 +60,12 @@ const currentPath = Astro.url.pathname;
             </HeaderLink>
             <HeaderLink
                 href={`/finance`}
-                isActive={isActivePath(currentPath, 'finance')}
+                isActive={isActivePath(
+                    currentPath,
+                    'finance',
+                    false,
+                    'business-of-madrassa'
+                )}
                 isLastItem={true}
             >
                 আর্থিক ব্যাপার
