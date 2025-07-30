@@ -1,51 +1,107 @@
 ---
 import { Image } from 'astro:assets';
-import BaseLayout from '@/layouts/BaseLayout.astro';
 import Text from '@/components/Text.astro';
-import PageHeader from '@/components/PageHeader.astro';
 import mapImage from '@/assets/images/map.jpeg';
+import PageLayout from '@/layouts/PageLayout.astro';
+import {
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from '@/components/ui/table';
 ---
 
-<BaseLayout meta={{ title: 'যোগাযোগ' }}>
-    <PageHeader
-        title="যোগাযোগ"
-        breadcrumbItems={[
-            {
-                url: '/',
-                label: 'নীড়পাতা',
-            },
-            {
-                url: '/contact',
-                label: 'যোগাযোগ',
-                isCurrentPage: true,
-            },
-        ]}
-    />
-    <div
-        class="mx-auto grid max-w-3xl grid-cols-2 gap-4 px-4 pt-6 pb-16 lg:px-0"
-    >
-        <div>
-            <Text variant="h5">বালক শাখা ও অফিস</Text>
-            <Text>
-                ২১৯/৪/খ, ভিপি রোড, দক্ষিণ পীরেরবাগ (৬০ ফিট ভাঙ্গাব্রীজ সংলগ্ন),
-                ঢাকা-১২১৬
-            </Text>
-            <Text variant="h5">বালিকা শাখা</Text>
-            <Text>
-                ২৪৬/১/বি-৫/১, পশ্চিম আগারগাঁও (৬০ ফিট ভাঙ্গাব্রীজ ও ৬ তলা
-                গার্মেন্টস সংলগ্ন), ঢাকা-১২০৭
-            </Text>
-            <Text variant="h5"
-                >মোবাইল: <a href="tel:+8801914-723676">01914-723676</a></Text
-            >
-            <Text variant="h5"
-                >ইমেইল: <a href="mailto:madrasatulilm.contact@gmail.com"
-                    >madrasatulilm.contact@gmail.com</a
-                ></Text
-            >
-        </div>
-        <div>
-            <Image src={mapImage} class="h-auto w-full" alt="address-map" />
-        </div>
-    </div>
-</BaseLayout>
+<PageLayout
+    title="মাদ্রাসায় আপনার সাদাকাহ ও যাকাত"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/finance',
+            label: 'আর্থিক ব্যাপার',
+        },
+        {
+            url: '/finance/your-donation-to-madrassa',
+            label: 'মাদ্রাসায় আপনার সাদাকাহ ও যাকাত',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <Text class="pt-0">
+        হিফয প্রতিষ্ঠানগুলোতে মূলত সামর্থ্যহীন দরিদ্র পরিবারের ছাত্রছাত্রীরে
+        ভর্তি হয়ে থাকে। মাদ্রাসাতুল ইলম এর বাস্তাবতায় দেখা যায়, মূল খরচ বা
+        বেতনের মাত্র ১০% আসে ছাত্রছাত্রীদের নিজস্ব অর্থ থেকে। বাকি ৯০% অর্থ
+        ছাত্রছাত্রীরা মাদ্রাসাতুল ইলম এর সাদাকাহ ফান্ড থেকে সংগ্রহ করে বেতন
+        পরিশোধ করে থাকে।
+    </Text>
+    <Text>
+        সাদাকাহ ফান্ড টি পরিচালিত হয়ে আসছে আপনাদের মাসিক সাদাকাহ ও বাৎসরিক যাকাত
+        সংগ্রহ করে। আমাদের কাছে সাদাকাহ বা যাকাত প্রেরণের ঠিকানা:
+    </Text>
+    <Table className="mt-4 text-lg md:mt-6">
+        <TableHeader>
+            <TableRow>
+                <TableHead>Bank/Type</TableHead>
+                <TableHead>Account Details</TableHead>
+            </TableRow>
+        </TableHeader>
+        <TableBody>
+            <TableRow>
+                <TableCell>IBBL</TableCell>
+                <TableCell>
+                    <ul>
+                        <li>Name: Madrasatul Ilm</li>
+                        <li>A/C No: 20506020200185414</li>
+                        <li>Branch: Agargaon/ IDB Bhaban</li>
+                        <li>Routing No: 125262149</li>
+                        <li>Swift Code: IBBLBDDH224</li>
+                    </ul>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>IBBL</TableCell>
+                <TableCell>
+                    <ul>
+                        <li>Name: Khondakar Joynal Abedin/Md. Saiful Islam</li>
+                        <li>A/C No: 20501910202485403</li>
+                        <li>Branch: Mohakhali Branch</li>
+                        <li>Routing No: 125263193</li>
+                        <li>Swift Code: IBBLBDDH191</li>
+                    </ul>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>DBBL</TableCell>
+                <TableCell>
+                    <ul>
+                        <li>Name: Faisal Imtiaz</li>
+                        <li>A/C No: 1051020009012</li>
+                        <li>Branch: Motijheel Foreign Exchange Branch</li>
+                        <li>Routing No: 090274309</li>
+                        <li>Swift Code: DBBLBDDH105</li>
+                    </ul>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>Rocket, Bkash, Nagad</TableCell>
+                <TableCell>
+                    <ul>
+                        <li>01309 91 43 66</li>
+                    </ul>
+                </TableCell>
+            </TableRow>
+        </TableBody>
+    </Table>
+    <Text class="md:pt-6"> আল্লাহ বলেন: </Text>
+    <Text class="text-primary text-center">
+        “যারা আল্লাহর পথে তাদের সম্পদ ব্যয় করে, তাদের উপমা একটি বীজের মত, যা
+        উৎপন্ন করল সাতটি শীষ, প্রতিটি শীষে রয়েছে একশ’ দানা। আর আল্লাহ যাকে চান
+        তার জন্য বাড়িয়ে দেন। আর আল্লাহ প্রাচুর্যময়, সর্বজ্ঞ।” (সূরা আল-বাকারাহ
+        ২: ২৬১)
+    </Text>
+</PageLayout>
