@@ -2,6 +2,7 @@
 import LinkCard from '@/components/LinkCard.astro';
 import PageLayout from '@/layouts/PageLayout.astro';
 import Text from '@/components/Text.astro';
+import { undefined } from 'astro:schema';
 
 const items = [
     {
@@ -29,7 +30,7 @@ const items2 = [
     },
     {
         title: 'দু’আ সমূহের উচ্চারণ',
-        link: 'https://madrasatulilm.com/study-materials/arabic/quran-and-hadith/dua-audio',
+        link: '/study-materials/quran-and-hadith/hadith-and-dua-collection/dua-audio',
     },
 ];
 ---
@@ -79,7 +80,11 @@ const items2 = [
                 <LinkCard
                     title={item.title}
                     link={item.link}
-                    buttonTitle="ডাউনলোড"
+                    buttonTitle={
+                        item.link.startsWith('https://')
+                            ? 'ডাউনলোড'
+                            : 'বিস্তারিত'
+                    }
                 />
             ))
         }

@@ -2,6 +2,7 @@
 import Text from '@/components/Text.astro';
 import { Button } from '@/components/ui/button';
 import PageLayout from '@/layouts/PageLayout.astro';
+import { YouTube } from '@astro-community/astro-embed-youtube';
 
 const items = [
     {
@@ -61,5 +62,12 @@ const items = [
         >
             <Button>Math Work sheet ডাউনলোড</Button>
         </a>
+    </div>
+    <div class="mt-6 text-center *:mx-auto *:rounded-md *:border-1">
+        <YouTube
+            id="2XN37RLg52w"
+            posterQuality="max"
+            params="list=PLN6GIGge5un_EqYH86bX_LjjjE1bBz5gb"
+        />
     </div>
 </PageLayout>
