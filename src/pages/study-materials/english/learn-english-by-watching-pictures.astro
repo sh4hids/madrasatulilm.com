@@ -4,6 +4,7 @@ import PageLayout from '@/layouts/PageLayout.astro';
 import { getCollection } from 'astro:content';
 import Text from '@/components/Text.astro';
 import { YouTube } from '@astro-community/astro-embed-youtube';
+import { Button } from '@/components/ui/button';
 
 const links = await getCollection('links');
 const currentPath = Astro.url.pathname.split('/').pop();
@@ -62,6 +63,15 @@ const items = links.find((item) => item.id === currentPath)?.data ?? [];
                 />
             ))
         }
+    </div>
+    <div class="mt-6 text-center">
+        <a
+            href="https://drive.google.com/drive/folders/1RP52Gp4S_Sf7Wc13aVJDmNp57cU2CvR_?usp=sharing"
+            target="_blank"
+            referrerpolicy="no-referrer"
+        >
+            <Button>English Work sheet ডাউনলোড</Button>
+        </a>
     </div>
     <div class="mt-4 text-center *:mx-auto *:rounded-md *:border-1 md:mt-6">
         <YouTube

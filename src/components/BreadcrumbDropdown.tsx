@@ -20,7 +20,7 @@ function BreadcrumbDropdown({ menuItems }: Props) {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 {menuItems.map((item) => (
-                    <DropdownMenuItem>
+                    <DropdownMenuItem key={item.url}>
                         <a
                             className="inline-block h-full w-full"
                             href={item.url}

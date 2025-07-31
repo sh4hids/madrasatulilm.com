@@ -1,12 +1,9 @@
 ---
-import { Image } from 'astro:assets';
 import Text from '@/components/Text.astro';
-import mapImage from '@/assets/images/map.jpeg';
 import PageLayout from '@/layouts/PageLayout.astro';
 import {
     Table,
     TableBody,
-    TableCaption,
     TableCell,
     TableHead,
     TableHeader,
@@ -33,20 +30,6 @@ import {
     ]}
 >
     <Table>
-        <TableCaption className="text-left">
-            <ul class="*:mt-1.5">
-                <li>
-                    * সামর্থ্যহীন পরিবার (সম্পূর্ণ বা আংশিক) মাসিক বেতন এর টাকার
-                    জন্য মাদ্রাসাতুল ইলম এর গুরাবা ফান্ড বরাবর আবেদন করতে পারেন।
-                </li>
-                <li>
-                    ** বালিকা শাখায় কোনো নাস্তার ব্যবস্থা না থাকায়, অভিভাবকরা
-                    ছাত্রীদের সাথে নাস্তা দিয়ে দিবেন। তবে বাইরে থেকে কেনা চটকদার
-                    মোড়কের কেইক, চিপ্স, চকলেট, কোমল পানীয় ইত্যাদি মাদ্রাসায় আনা
-                    নিষিদ্ধ।
-                </li>
-            </ul>
-        </TableCaption>
         <TableHeader>
             <TableRow>
                 <TableHead className="w-[100px]">বালক/বালিকা</TableHead>
@@ -115,6 +98,17 @@ import {
             </TableRow>
         </TableBody>
     </Table>
+    <ul class="*:mt-1.5">
+        <li>
+            * সামর্থ্যহীন পরিবার (সম্পূর্ণ বা আংশিক) মাসিক বেতন এর টাকার জন্য
+            মাদ্রাসাতুল ইলম এর গুরাবা ফান্ড বরাবর আবেদন করতে পারেন।
+        </li>
+        <li>
+            ** বালিকা শাখায় কোনো নাস্তার ব্যবস্থা না থাকায়, অভিভাবকরা ছাত্রীদের
+            সাথে নাস্তা দিয়ে দিবেন। তবে বাইরে থেকে কেনা চটকদার মোড়কের কেইক,
+            চিপ্স, চকলেট, কোমল পানীয় ইত্যাদি মাদ্রাসায় আনা নিষিদ্ধ।
+        </li>
+    </ul>
     <Text variant="h4" class="text-primary">
         * ভর্তি ফি সবার জন্য ২০০০ টাকা
     </Text>

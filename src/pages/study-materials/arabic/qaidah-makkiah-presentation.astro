@@ -10,7 +10,7 @@ const presentations = links.find((item) => item.id === currentPath)?.data ?? [];
 ---
 
 <PageLayout
-    title="কায়দা মাক্কিয়াহ বইয়ের PowerPoint Presentation ডাউনলোডি"
+    title="কায়দা মাক্কিয়াহ বইয়ের PowerPoint Presentation ডাউনলোড"
     breadcrumbItems={[
         {
             url: '/',
@@ -35,7 +35,7 @@ const presentations = links.find((item) => item.id === currentPath)?.data ?? [];
         },
     ]}
 >
-    <div class="grid grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
         {
             presentations.map((item) => (
                 <LinkCard

@@ -50,11 +50,27 @@ const items = links.find((item) => item.id === currentPath)?.data ?? [];
         এখানে: 01911-494547
     </Text>
 
-    <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
+    <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
         {
             items.map((item, index) => (
-                <LinkCard title={item.title} link={item.link} />
+                <LinkCard
+                    title={item.title}
+                    link={item.link}
+                    buttonTitle="ডাউনলোড"
+                />
             ))
         }
+    </div>
+    <div class="mt-6 text-center">
+        <a
+            href="https://drive.google.com/drive/folders/1nYFWuVmudIwSbxWIg74MTAJb6j3ldhGi?usp=sharing"
+            target="_blank"
+            referrerpolicy="no-referrer"
+        >
+            <Button>বাংলা Worksheet (PDF) ডাউনলোড</Button>
+        </a>
+    </div>
+    <div class="mt-6 text-center *:mx-auto *:rounded-md *:border-1">
+        <YouTube id="FArIDxr45jM" posterQuality="max" />
     </div>
 </PageLayout>
