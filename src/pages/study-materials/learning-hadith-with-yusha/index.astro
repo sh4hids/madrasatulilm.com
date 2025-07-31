@@ -1,0 +1,66 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+import Text from '@/components/Text.astro';
+import { YouTube } from '@astro-community/astro-embed-youtube';
+
+const links = await getCollection('links');
+const currentPath = Astro.url.pathname.split('/').pop();
+
+const items = links.find((item) => item.id === currentPath)?.data ?? [];
+---
+
+<PageLayout
+    title="হাদীস শিখি ইউশার সাথে"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/study-materials/learning-hadith-with-yusha',
+            label: 'হাদীস শিখি ইউশার সাথে',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <Text class={'pt-0'}>
+        আমাদের সালাফরা কুর্‌আন-হাদীস শুধু পড়ে বুক-সেলফে রেখে দেওয়াকে জ্ঞানই মনে
+        করতেন না। আল-কুর্‌আনের মুখস্থের পাশাপাশি হাদীস মুখস্থেরও প্রতিযোগীতা
+        চালাতেন নিজেদের মাঝে। লাখ-লাখ হাদীস মুখস্থ করে কেউ হয়ে গেলেন ইমাম
+        বুখারী, কেউবা ইমাম আহমাদ রহিমাহুমুল্লাহ। ভবিষ্যৎ প্রজন্মের মাঝে আরেকজন
+        ইমাম ইবনু কাসীর দেখবার লক্ষ্যে আমরা হাতে নিয়েছি এই হাদীস সিরিজ প্রকল্প।
+        ছোট্ট বাবুদের জন্য এই সিরিজের বইগুলোতে বাছাই করা হয়েছে এমন সব হাদীস যা
+        দৈর্ঘ্যে অনেক ছোট, কিন্তু গুরুত্বে ধারণাতীত। ইউশা নামের এক দশ বছরের
+        বাচ্চা ছেলের সাথে গল্পে-গল্পে, ছবি দেখতে দেখতে আমাদের বাচ্চারাও হাদীস
+        শিখবে, মুখস্থ করবে এ-ই আমাদের প্রত্যাশা। আল্লাহ আমাদের নেক উদ্দেশ্য এবং
+        প্রচেষ্টাকে কবুল করুন।
+    </Text>
+    <Text variant="h3"
+        >"হাদীস শিখি ইউশার সাথে-১" বইয়ের আরবী ও বাংলা হাদীসের সঠিক উচ্চারণ</Text
+    >
+
+    <div class="mt-6 text-center *:mx-auto *:rounded-md *:border-1">
+        <YouTube
+            id="ALAvfpkkTlw"
+            posterQuality="max"
+            params="list=PLN6GIGge5un9gKYMXvM0YtQrlO5_TlxGA"
+        />
+    </div>
+    <Text variant="h3"
+        >"হাদীস শিখি ইউশার সাথে-২" বইয়ের আরবী ও বাংলা হাদীসের সঠিক উচ্চারণ</Text
+    >
+
+    <div class="mt-6 text-center *:mx-auto *:rounded-md *:border-1">
+        <YouTube
+            id="AipErzpJVAQ"
+            posterQuality="max"
+            params="list=PLN6GIGge5un9gKYMXvM0YtQrlO5_TlxGA"
+        />
+    </div>
+</PageLayout>

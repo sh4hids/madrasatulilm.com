@@ -1,0 +1,70 @@
+---
+import Footer from '@/components/Footer.astro';
+import Head from '@/components/Head.astro';
+import Header from '@/components/Header.astro';
+// import ThemeProvider from '@/components/ThemeProvider.astro';
+import { siteConfig, type SiteMeta } from '@/config';
+
+interface Props {
+    meta: SiteMeta;
+}
+
+const {
+    meta: {
+        title,
+        description = siteConfig.description,
+        ogImage,
+        createdAt,
+        updatedAt,
+    },
+} = Astro.props;
+---
+
+<script is:inline>
+    const getThemePreference = () => {
+        if (
+            typeof localStorage !== 'undefined' &&
+            localStorage.getItem('theme')
+        ) {
+            return localStorage.getItem('theme');
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light';
+    };
+    const isDark = getThemePreference() === 'dark';
+    document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+
+    if (typeof localStorage !== 'undefined') {
+        const observer = new MutationObserver(() => {
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['class'],
+        });
+    }
+</script>
+
+<html lang={siteConfig.lang}>
+    <head>
+        <Head
+            title={title}
+            description={description}
+            ogImage={ogImage}
+            createdAt={createdAt}
+            updatedAt={updatedAt}
+        />
+        <!-- <ViewTransitions /> -->
+    </head>
+    <body>
+        <!-- <ThemeProvider /> -->
+        <!-- <SkipLink /> -->
+        <Header />
+        <main id="main" class="min-h-[calc(100vh_-_200px)]">
+            <slot />
+        </main>
+        <Footer />
+    </body>
+</html>

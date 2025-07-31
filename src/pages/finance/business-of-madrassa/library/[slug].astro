@@ -1,0 +1,132 @@
+---
+import { Image } from 'astro:assets';
+import PageLayout from '@/layouts/PageLayout.astro';
+import Text from '@/components/Text.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const books = await getCollection('books');
+    return books.map((book) => ({
+        params: { slug: book.id },
+        props: { book },
+    }));
+}
+
+const { book } = Astro.props;
+---
+
+<PageLayout
+    title={book.data.name}
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/finance/business-of-madrassa',
+            label: 'ফুড এন্ড বুক শপ',
+        },
+        {
+            url: '/finance/business-of-madrassa/library',
+            label: 'বুক শপের বইসমূহ',
+        },
+        {
+            url: `/finance/business-of-madrassa/library/${book.id}`,
+            label: book.data.name,
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-9 md:gap-6">
+        <div class="col-span-1 md:col-span-4">
+            <Image
+                src={`/images/${book.data.image}`}
+                class="h-auto w-full rounded-md border-1"
+                alt={book.data.name}
+                width="100"
+                height="100"
+            />
+            {
+                book.data.slug === 'learning-hadith-with-yusha' && (
+                    <Image
+                        src={`/images/${book.data.slug}-eng.jpeg`}
+                        class="mt-4 h-auto w-full rounded-md border-1 md:mt-6"
+                        alt={book.data.name}
+                        width="100"
+                        height="100"
+                    />
+                )
+            }
+        </div>
+        <div class="col-span-1 md:col-span-5 md:col-start-5">
+            <div class="*:pt-4 *:first:pt-0" set:html={book.data.description} />
+            <Text variant="h5">মূল্য:</Text>
+            {
+                book.data.prices.hardCover && (
+                    <Text> - {book.data.prices.hardCover} </Text>
+                )
+            }
+            {
+                book.data.prices.paperback && (
+                    <Text> - {book.data.prices.paperback} </Text>
+                )
+            }
+            <Text variant="h6">Call & Whatsapp for order: 01914-723676</Text>
+        </div>
+        {
+            book.data.slug === 'learning-hadith-with-yusha' && (
+                <div class="grid grid-cols-2 gap-4 *:rounded-md *:border-1 md:col-span-9 md:grid-cols-3 md:gap-6">
+                    <Image
+                        src={`/images/${book.data.slug}-c1.png`}
+                        alt={book.data.name}
+                        width="100"
+                        height="100"
+                        class="h-[180px] w-auto md:h-[270px]"
+                    />
+                    <Image
+                        src={`/images/${book.data.slug}-c2.png`}
+                        alt={book.data.name}
+                        width="100"
+                        height="100"
+                        class="h-[180px] w-auto md:h-[270px]"
+                    />
+                    <Image
+                        src={`/images/${book.data.slug}-c3.png`}
+                        alt={book.data.name}
+                        width="100"
+                        height="100"
+                        class="h-[180px] w-auto md:h-[270px]"
+                    />
+                    <Image
+                        src={`/images/${book.data.slug}-c4.png`}
+                        alt={book.data.name}
+                        width="100"
+                        height="100"
+                        class="h-[180px] w-auto md:h-[270px]"
+                    />
+                    <Image
+                        src={`/images/${book.data.slug}-c5.png`}
+                        alt={book.data.name}
+                        width="100"
+                        height="100"
+                        class="h-[180px] w-auto md:h-[270px]"
+                    />
+                    <Image
+                        src={`/images/${book.data.slug}-c6.png`}
+                        alt={book.data.name}
+                        width="100"
+                        height="100"
+                        class="h-[180px] w-auto md:h-[270px]"
+                    />
+                    <Image
+                        src={`/images/${book.data.slug}-c7.png`}
+                        alt={book.data.name}
+                        width="100"
+                        height="100"
+                        class="h-[180px] w-auto md:h-[270px]"
+                    />
+                </div>
+            )
+        }
+    </div>
+</PageLayout>

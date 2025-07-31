@@ -1,0 +1,46 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+
+const items = [
+    {
+        title: 'হাত ঘুরিয়ে আরবী হরফ লিখি, সাথে শিখি দুইটা করে শব্দ (বই)',
+        link: '/study-materials/arabic/arabic-letters-with-examples',
+    },
+    {
+        title: 'আরবী বর্ণ চিনি ও আরবী পড়তে শিখি',
+        link: '/study-materials/arabic/arabic-letters-with-4-form-and-pictures',
+    },
+    {
+        title: 'ছবি দেখে আরবী শব্দ শেখা',
+        link: '/study-materials/arabic/learn-arabic-by-watching-pictures',
+    },
+];
+---
+
+<PageLayout
+    title="আরবী"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/arabic',
+            label: 'আরবী',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+        {
+            items.map((item, index) => (
+                <LinkCard title={item.title} link={item.link} />
+            ))
+        }
+    </div>
+</PageLayout>

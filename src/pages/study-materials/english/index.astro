@@ -1,0 +1,42 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+
+const items = [
+    {
+        title: 'Learn English Alphabets with Words',
+        link: '/study-materials/english/learn-alphabets-with-words',
+    },
+    {
+        title: 'ছবি দেখে ইংরেজী শব্দ শেখা',
+        link: '/study-materials/english/learn-english-by-watching-pictures',
+    },
+];
+---
+
+<PageLayout
+    title="ইংরেজী"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/study-materials/english',
+            label: 'ইংরেজী',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+        {
+            items.map((item, index) => (
+                <LinkCard title={item.title} link={item.link} />
+            ))
+        }
+    </div>
+</PageLayout>

@@ -1,0 +1,60 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import Text from '@/components/Text.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+
+const items = [
+    {
+        title: 'মধু',
+        link: '/finance/business-of-madrassa/honey',
+    },
+    {
+        title: 'ঘি',
+        link: '/finance/business-of-madrassa/ghee',
+    },
+    {
+        title: 'তেল',
+        link: '/finance/business-of-madrassa/mustard-oil',
+    },
+    {
+        title: '4D Block',
+        link: '/finance/business-of-madrassa/4d-block',
+    },
+    {
+        title: 'বুক শপের বইসমূহ',
+        link: '/finance/business-of-madrassa/library',
+    },
+];
+---
+
+<PageLayout
+    title="ফুড এন্ড বুক শপ"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/finance',
+            label: 'আর্থিক ব্যাপার',
+        },
+        {
+            url: '/business-of-madrassa',
+            label: 'ফুড এন্ড বুক শপ',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <Text class="pt-0">
+        মাদ্রাসাতুল ইল্‌ম এর সাথে জড়িত কিছু দ্বীনি ভাই সরাসরি উৎপাদন স্থল থেকে
+        সংগ্রহ করেন বিভিন্ন পণ্য যেমন- মধু, তেল, ঘি, ইত্যাদি। পন্যগুলো সম্পর্কে
+        জানতে ও অর্ডার করতে নিচে ক্লিক করুন।
+    </Text>
+    <div class="mt-4 grid grid-cols-1 gap-4 md:mt-6 md:grid-cols-3 md:gap-6">
+        {
+            items.map((item, index) => (
+                <LinkCard title={item.title} link={item.link} />
+            ))
+        }
+    </div>
+</PageLayout>

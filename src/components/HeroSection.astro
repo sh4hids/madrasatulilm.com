@@ -1,0 +1,36 @@
+---
+import Text from '@/components/Text.astro';
+import HeroSlider from '@/components/HeroSlider.tsx';
+---
+
+<div class="grid grid-cols-12 items-center md:gap-6 md:py-16">
+    <div
+        class="col-span-12 flex h-full items-center justify-center py-4 md:hidden"
+    >
+        <HeroSlider client:visible />
+    </div>
+    <div class="col-span-12 md:col-span-7">
+        <Text>
+            আল-কুর্‌আনুল কারীমের হিফয কার্যক্রমকে কেন্দ্র করে বাংলাদেশে গড়ে
+            উঠেছে অসংখ্য প্রতিষ্ঠান। কিন্তু আমরা লক্ষ্য করেছি, প্রতিষ্ঠানগুলোর
+            বেশিরভাগই আল-কুর্‌আনের মূল উদ্দেশ্যকে পূরণ করতে ব্যর্থ। পবিত্র
+            গ্রন্থ আল-কুর্‌আন নাযিলের মূল উদ্দেশ্য সম্পর্কে আল্লাহ বলেন:
+        </Text>
+        <Text class="text-primary font-arabic text-center text-2xl font-bold">
+            كِتَابٌ أَنْزَلْنَاهُ إِلَيْكَ مُبَارَكٌ لِيَدَّبَّرُوا آيَاتِهِ
+            وَلِيَتَذَكَّرَ أُولُو الْأَلْبَابِ
+        </Text>
+        <Text>
+            “এক মুবারক কিতাব, এটা আমরা আপনার প্রতি নাযিল করেছি, যাতে মানুষ এর
+            আয়াত সমূহ গভীরভাবে চিন্তা করে এবং যাতে বোধশক্তিসম্পন্ন ব্যক্তিরা
+            গ্ৰহণ করে উপদেশ।” (সুরা 38 সাদ: ২৯)
+        </Text>
+        <Text>
+            আর তাই, হিফযুল কুর্‌আনে এক বৈচিত্র আনার লক্ষ্য নিয়ে ‘মাদ্রাসাতুল
+            ইলম’ যাত্রা শুরু করে ২০১৯ সালে।
+        </Text>
+    </div>
+    <div class="hidden h-full items-center md:col-span-5 md:flex">
+        <HeroSlider client:visible />
+    </div>
+</div>

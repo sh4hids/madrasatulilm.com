@@ -1,0 +1,38 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+
+const items = [
+    {
+        title: 'বাংলা বর্ণ চিনি ও বাংলা পড়তে শিখি (প্রেসেন্টেশন)',
+        link: '/study-materials/bengali/know-and-learn-bengali-letters',
+    },
+];
+---
+
+<PageLayout
+    title="বাংলা"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/bengali',
+            label: 'বাংলা',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+        {
+            items.map((item, index) => (
+                <LinkCard title={item.title} link={item.link} />
+            ))
+        }
+    </div>
+</PageLayout>

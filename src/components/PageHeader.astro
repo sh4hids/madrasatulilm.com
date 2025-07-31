@@ -1,0 +1,24 @@
+---
+import Breadcrumb from '@/components/Breadcrumb.astro';
+import Text from '@/components/Text.astro';
+import { type BreadcrumbItem } from '@/components/types';
+
+interface Props {
+    title: string;
+    breadcrumbItems: BreadcrumbItem[];
+}
+
+const { title, breadcrumbItems } = Astro.props;
+---
+
+<div
+    class="border-x border-b border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed px-4 py-4 [--pattern-fg:var(--color-gray-950)]/5 md:py-8 lg:px-0 dark:[--pattern-fg:var(--color-white)]/10"
+>
+    <div class="mx-auto px-4 md:max-w-2xl lg:max-w-3xl lg:px-0">
+        <Breadcrumb items={breadcrumbItems} />
+        <Text variant="h2" class="leading-tight md:text-2xl md:leading-snug">
+            {title}
+        </Text>
+        <slot />
+    </div>
+</div>
