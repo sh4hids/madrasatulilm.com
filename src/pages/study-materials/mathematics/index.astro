@@ -1,0 +1,65 @@
+---
+import Text from '@/components/Text.astro';
+import { Button } from '@/components/ui/button';
+import PageLayout from '@/layouts/PageLayout.astro';
+
+const items = [
+    {
+        title: 'Learn English Alphabets with Words',
+        link: '/study-materials/english/learn-alphabets-with-words',
+    },
+    {
+        title: 'ছবি দেখে ইংরেজী শব্দ শেখা',
+        link: '/study-materials/english/learn-english-by-watching-pictures',
+    },
+];
+---
+
+<PageLayout
+    title="গণিত"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/study-materials/mathematics',
+            label: 'গণিত',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <Text variant="h3" class={'pt-0 md:pt-0'}> গুণের নামতার কার্ড </Text>
+    <Text>
+        ০ থেকে ১১ পর্যন্ত গুণের নামতার কার্ডটা একটি A4 কাগজের উভয় পাশে কালার
+        প্রিন্ট করুন। পাতাটি ভাজ করে একটি দুই পাতার বইয়ের মতো বানান। তারপর
+        ছাত্র/ছাত্রীকে বলুন, ঠিক যেভাবে লেখা আছে সেভাবেই নামতাগুলো মুখস্থ করতে।
+    </Text>
+    <div class="mt-4 text-center md:mt-6">
+        <a
+            href="https://drive.google.com/file/d/1nbiA9Woi2tT-2XN9fPRht7KIbdrUDuvB/view?usp=sharing"
+            target="_blank"
+            referrerpolicy="no-referrer"
+        >
+            <Button>গুণের নামতার কার্ড ডাউনলোড</Button>
+        </a>
+    </div>
+    <Text variant="h3"> সংখ্যা ও নামতার ধারণার অনুশীলন </Text>
+    <Text>
+        Work sheet গুলো প্রিন্ট করে ছাত্র/ছাত্রীদের কাছে দিন। আশা করা যায়, এগুলো
+        অনুশীলন করলে তাদের কাছে সংখ্যা ও নামতার ধারণা স্পষ্ট হবে, ইন শা আল্লাহ।
+    </Text>
+    <div class="mt-4 text-center md:mt-6">
+        <a
+            href="https://drive.google.com/drive/folders/1XWlnKypIwWWxuwWepNzNP4hWjoKf9VaY?usp=sharing"
+            target="_blank"
+            referrerpolicy="no-referrer"
+        >
+            <Button>Math Work sheet ডাউনলোড</Button>
+        </a>
+    </div>
+</PageLayout>

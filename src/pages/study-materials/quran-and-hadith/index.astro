@@ -1,0 +1,42 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+
+const items = [
+    {
+        title: 'হাদীস ও দু’আ সম্ভার',
+        link: '/study-materials/quran-and-hadith/hadith-and-dua-collection',
+    },
+    {
+        title: 'কুর’আন ও তাজউইদ',
+        link: '/study-materials/quran-and-hadith/quran-and-tazweed',
+    },
+];
+---
+
+<PageLayout
+    title="কুর্‌আন ও হাদীস"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/study-materials/quran-and-hadith',
+            label: 'কুর্‌আন ও হাদীস',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+        {
+            items.map((item, index) => (
+                <LinkCard title={item.title} link={item.link} />
+            ))
+        }
+    </div>
+</PageLayout>

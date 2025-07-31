@@ -1,0 +1,85 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+import Text from '@/components/Text.astro';
+
+const items = [
+    {
+        title: 'জুয আম্মা (৩০তম পারা) Audio',
+        link: 'https://drive.google.com/drive/folders/1f7zYQY2ov_PCy8OD5n-xMytC2huuBlY0?usp=sharing',
+    },
+    {
+        title: 'জুয তাবারাক (২৯তম পারা) Audio',
+        link: 'https://drive.google.com/drive/folders/1CoJNuAxl4ZGeBO983jVUSl_Rysfa2Q7d?usp=sharing',
+    },
+];
+
+const items2 = [
+    {
+        title: 'জুয আম্মা (৩০তম পারা) PDF',
+        link: 'https://drive.google.com/file/d/1Es6WlvTDqNhArEiSoY9Y0PfXGzHJauf0/view?usp=sharing',
+    },
+    {
+        title: 'জুয তাবারাক (২৯তম পারা)',
+        link: 'https://drive.google.com/file/d/1TrceQOPkIqwYQ9jZhO6xOMddVcTqhipr/view?usp=sharing',
+    },
+    {
+        title: 'সূরা বাক্বারাহ, কাহফ ও মূলক PDF',
+        link: 'https://drive.google.com/file/d/1SUvscfRQdQtZ4QdTTl9kOQ9wBRObOs1t/view?usp=sharing',
+    },
+];
+---
+
+<PageLayout
+    title="কুর’আন"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/study-materials/quran-and-hadith',
+            label: 'কুর্‌আন ও হাদীস',
+        },
+        {
+            url: '/study-materials/quran-and-hadith/quran-and-tazweed',
+            label: 'কুর’আন ও তাজউইদ',
+        },
+        {
+            url: '/study-materials/quran-and-hadith/quran-and-tazweed/quran',
+            label: 'কুর’আন',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <Text variant="h3" class={'pt-0 md:pt-0'}
+        >কুর্‌আন মাশক (ক্বারী আব্দুল ক্বাদীর উসমান এর কণ্ঠে)</Text
+    >
+    <div class="mt-4 grid gap-4 md:mt-6 md:grid-cols-2 md:gap-6">
+        {
+            items.map((item, index) => (
+                <LinkCard
+                    title={item.title}
+                    link={item.link}
+                    buttonTitle="ডাউনলোড"
+                />
+            ))
+        }
+    </div>
+    <Text variant="h3">বই</Text>
+    <div class="mt-4 grid grid-cols-1 gap-4 md:mt-6 md:grid-cols-3 md:gap-6">
+        {
+            items2.map((item, index) => (
+                <LinkCard
+                    title={item.title}
+                    link={item.link}
+                    buttonTitle="ডাউনলোড"
+                />
+            ))
+        }
+    </div>
+</PageLayout>

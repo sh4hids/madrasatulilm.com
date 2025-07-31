@@ -1,0 +1,118 @@
+---
+import Text from '@/components/Text.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from '@/components/ui/table';
+---
+
+<PageLayout
+    title="এখানে পড়তে খরচ কত হবে"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/finance',
+            label: 'আর্থিক ব্যাপার',
+        },
+        {
+            url: '/finance/expense-to-study-here',
+            label: 'এখানে পড়তে খরচ কত হবে',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <Table>
+        <TableHeader>
+            <TableRow>
+                <TableHead className="w-[100px]">বালক/বালিকা</TableHead>
+                <TableHead>আবাসিক/অনাবাসিক</TableHead>
+                <TableHead>বেতন ও খরচ*</TableHead>
+            </TableRow>
+        </TableHeader>
+        <TableBody>
+            <TableRow>
+                <TableCell>বালক</TableCell>
+                <TableCell>আবাসিক</TableCell>
+                <TableCell>
+                    <Text>বেতন:</Text>
+                    <ul class="*:ml-4">
+                        <li>- প্লে-গ্রুপ: ১০০০ টাকা</li>
+                        <li>- নার্সারী থেকে ক্লাস-২: ১৫০০ টাকা</li>
+                        <li>- ক্লাস-৩ থেকে ক্লাস-৫: ২০০০ টাকা</li>
+                    </ul>
+                    <Text>খাবার খরচ: ২০০০ টাকা</Text>
+                    <Text class="pt-0">বোর্ডিং ফি: ১৫০০ টাকা</Text>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>বালক</TableCell>
+                <TableCell>
+                    <Text> অনাবাসিক </Text>
+                    <Text variant="label1" class="pt-0">
+                        (সময়: ফজরের পর থেকে যোহর পর্যন্ত এবং মাগরিব থেকে ইশা
+                        পর্যন্ত)
+                    </Text>
+                </TableCell>
+                <TableCell>
+                    <Text>বেতন:</Text>
+                    <ul class="*:ml-4">
+                        <li>- প্লে-গ্রুপ: ১০০০ টাকা</li>
+                        <li>- নার্সারী থেকে ক্লাস-২: ১৫০০ টাকা</li>
+                        <li>- ক্লাস-৩ থেকে ক্লাস-৫: ২০০০ টাকা</li>
+                    </ul>
+                    <Text> সকালের নাস্তা: ৫০০ টাকা</Text>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>বালিকা</TableCell>
+                <TableCell>
+                    <Text> অনাবাসিক** </Text>
+                    <Text variant="label1" class="pt-0">
+                        (সময়: সকাল থেকে যোহর পর্যন্ত এবং মাগরিব থেকে ইশা
+                        পর্যন্ত)
+                    </Text>
+                </TableCell>
+                <TableCell>
+                    <Text>বেতন:</Text>
+                    <ul class="*:ml-4">
+                        <li>- প্লে-গ্রুপ: ১০০০ টাকা</li>
+                        <li>- নার্সারী থেকে ক্লাস-২: ১৫০০ টাকা</li>
+                        <li>- ক্লাস-৩ থেকে ক্লাস-৫: ২০০০ টাকা</li>
+                    </ul>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>বৈকালিক পার্ট-টাইম মাদ্রাসা</TableCell>
+                <TableCell />
+                <TableCell>
+                    <Text>বেতন: ১০০০ টাকা</Text>
+                </TableCell>
+            </TableRow>
+        </TableBody>
+    </Table>
+    <ul class="*:mt-1.5">
+        <li>
+            * সামর্থ্যহীন পরিবার (সম্পূর্ণ বা আংশিক) মাসিক বেতন এর টাকার জন্য
+            মাদ্রাসাতুল ইলম এর গুরাবা ফান্ড বরাবর আবেদন করতে পারেন।
+        </li>
+        <li>
+            ** বালিকা শাখায় কোনো নাস্তার ব্যবস্থা না থাকায়, অভিভাবকরা ছাত্রীদের
+            সাথে নাস্তা দিয়ে দিবেন। তবে বাইরে থেকে কেনা চটকদার মোড়কের কেইক,
+            চিপ্স, চকলেট, কোমল পানীয় ইত্যাদি মাদ্রাসায় আনা নিষিদ্ধ।
+        </li>
+    </ul>
+    <Text variant="h4" class="text-primary">
+        * ভর্তি ফি সবার জন্য ২০০০ টাকা
+    </Text>
+    <Text variant="h4" class="text-primary pt-2 md:pt-2">
+        * আর প্রতি বছর নতুন করে আরো ১০০০ টাকা
+    </Text>
+</PageLayout>

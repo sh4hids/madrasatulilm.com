@@ -1,0 +1,77 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import Text from '@/components/Text.astro';
+import { Button } from '@/components/ui/button';
+import PageLayout from '@/layouts/PageLayout.astro';
+import { YouTube } from '@astro-community/astro-embed-youtube';
+
+const items = [
+    {
+        title: 'কায়দা মাক্কিয়াহ বইয়ের PowerPoint Presentation ডাউনলোড',
+        link: '/study-materials/arabic/qaidah-makkiah-presentation',
+    },
+    {
+        title: 'কায়দা মাক্কিয়াহ বইয়ের Audio Sound ডাউনলোড',
+        link: '/study-materials/arabic/qaidah-makkiah-audio',
+    },
+    {
+        title: 'মাদীনা মুসহাফ এবং মাজিদী বা ইন্দো-পাক মুসহাফের মধ্যে পার্থক্য',
+        link: 'https://drive.google.com/file/d/1zzFpAJRjGw97DsmvEyfLt8D_cYGEVWuK/view?usp=sharing',
+    },
+];
+---
+
+<PageLayout
+    title="আরবী বর্ণ চিনি ও আরবী পড়তে শিখি"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/study-materials/arabic',
+            label: 'আরবী',
+        },
+        {
+            url: '/study-materials/arabic/arabic-letters-with-4-form-and-pictures',
+            label: 'আরবী বর্ণ চিনি ও আরবী পড়তে শিখি',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <Text class="pt-0">
+        কুরআন পড়তে শেখাতে যে বইটি শুরুতেই শিশুর হাতে তুলে দিতে হয়, তা হচ্ছে,
+        ‘কায়দা বই’। ‘মাদ্রাসাতুল ইল্‌ম’ এক্ষেত্রে ‘কায়দা মাক্কিয়াহ’ নামক কায়দা
+        বইটি ব্যবহার করে থাকে। ‘মাদানী ছাপার মুসহাফ’টি পড়তে এই কায়দা বইটি
+        বিশেষভাবে উপযোগী। এই পেইজ থেকে ‘কায়দা মাক্কিয়াহ’ বইটি, বইয়ের প্রতিটি
+        অধ্যায়ের উপর নির্মিত PowerPoint Presentation এবং বইয়ে ব্যবহৃত হরফ ও
+        শব্দগুলোর সঠিক উচ্চারণ ডাউনলোড করতে পারেন।
+    </Text>
+    <Text>
+        তাছাড়াও, নিচের ভিডিও’র প্লে-লিস্টে রয়েছে শিশুদের কায়দা পড়ানোর বিভিন্ন
+        টেকনিক সম্বলিত বেশ কিছু ভিডিও।
+    </Text>
+    <div class="mt-6 text-center *:mx-auto *:rounded-md *:border-1">
+        <YouTube id="4GoAow6_4Ec" posterQuality="max" />
+    </div>
+    <div class="mt-6 text-center">
+        <a
+            href="https://drive.google.com/file/d/16yaUNlOultDzt1Ql8WAjr9sFg0DBeY52/view?usp=sharing"
+            target="_blank"
+            referrerpolicy="no-referrer"
+        >
+            <Button>কায়দা মাক্কিয়াহ বই ডাউনলোড</Button>
+        </a>
+    </div>
+    <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
+        {
+            items.map((item, index) => (
+                <LinkCard title={item.title} link={item.link} />
+            ))
+        }
+    </div>
+</PageLayout>

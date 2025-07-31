@@ -1,0 +1,39 @@
+---
+import Text from '@/components/Text.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+---
+
+<PageLayout
+    title="সুবিধাসমূহ"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/facilities',
+            label: 'সুবিধাসমূহ',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <Text class="pt-0">
+        মাদ্রাসাতুল ইলম এ থেকে নিম্নোক্ত সুবিধাগুলো পেতে পারেন:
+    </Text>
+    <ul
+        role="list"
+        class="mt-6 *:mb-1.5 *:before:mr-1.5 *:before:content-[attr(data-icon)]"
+    >
+        <li data-icon="✦">
+            একজন ত্বলিবুল ইলম যেনো আল-কুর্‌আন মোটামোটি বুঝে মুখস্থ করতে পারে।
+        </li>
+        <li data-icon="✦">
+            কুর্‌আন হিফয করার পর যেনো মানুষকে আল-কুর্‌আন দিয়ে নাসীহাহ (উপদেশ)
+            দিতে পারে।
+        </li>
+        <li data-icon="✦">
+            পরবর্তী উচ্চশিক্ষায় যেনো মাদ্রাসাতুল ইলম এর ত্বলিবুল ইলম অনেকটা
+            এগিয়ে থাকে।
+        </li>
+    </ul>
+</PageLayout>

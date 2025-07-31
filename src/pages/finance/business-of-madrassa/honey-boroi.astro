@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import Text from '@/components/Text.astro';
+import honeyBoroi from '@/assets/images/মধু-বরই.jpg';
+import honeyKalojira from '@/assets/images/মধু-কালোজিরা.jpg';
+import PageLayout from '@/layouts/PageLayout.astro';
+---
+
+<PageLayout
+    title="মধু (বরই)"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/finance/business-of-madrassa',
+            label: 'ফুড এন্ড বুক শপ',
+        },
+        {
+            url: '/finance/business-of-madrassa/honey',
+            label: 'মধু',
+        },
+        {
+            url: '/finance/business-of-madrassa/honey-boroi',
+            label: 'মধু (বরই)',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+        <div>
+            <Image
+                src={honeyBoroi}
+                class="h-auto w-full rounded-md border-1"
+                alt="বরই ফুলের মধু"
+            />
+        </div>
+        <div>
+            <Text class={'pt-0'}>
+                বেশ কয়েক বছর ধরেই মাদ্‌রাসাতুল ইলম কিছু খাদ্যপণ্যের নির্ভেজাল
+                উৎপাদন ও ব্যবসার সাথে জড়িত আছে। এই প্রথম খাদ্যপণ্যগুলো অনলাইনে
+                বিক্রির জন্য উন্মুক্ত করা হচ্ছে, যাতে মানুষের কাছে নির্ভেজাল
+                খাদ্যপণ্যগুলো সহজলভ্য হয়, আর এর লভ্যাংশ দ্বারা উপকৃত হয়
+                মাদ্‌রাসাতুল ইলম।
+            </Text>
+            <Text variant="h5">এমনই একটি পণ্য, বরই ফুলের মধু:</Text>
+            <Text
+                >সাতক্ষীরা সদরের তালা ও কলারোয়া উপজেলা থেকে সংগ্রহ করা হয় অতি
+                মিষ্টি বরই ফুলের মধু।
+            </Text>
+            <Text variant="h5">মূল্য:</Text>
+            <Text> - ৫০০ গ্রাম ৩০০ টাকা </Text>
+            <Text class={'font-bold'}>সাথে ডেলিভারী চার্জ: 60~120 টাকা</Text>
+            <Text variant="h6">Call & Whatsapp for order: 01914-723676</Text>
+        </div>
+    </div>
+</PageLayout>

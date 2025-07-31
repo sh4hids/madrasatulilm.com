@@ -1,0 +1,42 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+
+const items = [
+    {
+        title: 'এখানে পড়তে খরচ কত হবে',
+        link: '/finance/expense-to-study-here',
+    },
+    {
+        title: 'মাদ্রাসায় আপনার সাদাকাহ ও যাকাত',
+        link: '/finance/your-donation-to-madrassa',
+    },
+    {
+        title: 'মাদরাসাতুল ইলম ফুড এন্ড বুক শপ',
+        link: '/finance/business-of-madrassa',
+    },
+];
+---
+
+<PageLayout
+    title="আর্থিক ব্যাপার"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/finance',
+            label: 'আর্থিক ব্যাপার',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+        {
+            items.map((item, index) => (
+                <LinkCard title={item.title} link={item.link} />
+            ))
+        }
+    </div>
+</PageLayout>

@@ -1,0 +1,45 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+const links = await getCollection('links');
+const currentPath = Astro.url.pathname.split('/').pop();
+
+const items = links.find((item) => item.id === currentPath)?.data ?? [];
+---
+
+<PageLayout
+    title="Learn English Alphabets with Words"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/study-materials/english',
+            label: 'ইংরেজী',
+        },
+        {
+            url: '/study-materials/english/learn-alphabets-with-words',
+            label: 'Learn English Alphabets with Words',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+        {
+            items.map((item, index) => (
+                <LinkCard
+                    title={item.title}
+                    link={item.link}
+                    buttonTitle="ডাউনলোড"
+                />
+            ))
+        }
+    </div>
+</PageLayout>

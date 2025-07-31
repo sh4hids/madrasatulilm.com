@@ -1,0 +1,22 @@
+---
+import Text from './Text.astro';
+import { Button } from './ui/button';
+
+interface Props {
+    title: string;
+    link: string;
+    buttonTitle?: string;
+    shouldCenter?: boolean;
+}
+
+const { title, link, buttonTitle, shouldCenter } = Astro.props;
+---
+
+<div
+    class={`bg-accent p-6 flex md:h-56 flex-col items-center justify-center gap-2 rounded-md border-1 ${shouldCenter ? 'col-start-2' : ''}`}
+>
+    <Text variant="h4" class="text-center">{title}</Text>
+    <a href={link} target={link.startsWith('https://') ? '_blank' : '_self'}>
+        <Button variant="link">{buttonTitle ?? 'বিস্তারিত'}</Button>
+    </a>
+</div>

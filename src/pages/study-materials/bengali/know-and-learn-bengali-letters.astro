@@ -1,0 +1,76 @@
+---
+import LinkCard from '@/components/LinkCard.astro';
+import Text from '@/components/Text.astro';
+import { Button } from '@/components/ui/button';
+import PageLayout from '@/layouts/PageLayout.astro';
+import { YouTube } from '@astro-community/astro-embed-youtube';
+import { getCollection } from 'astro:content';
+
+const links = await getCollection('links');
+const currentPath = Astro.url.pathname.split('/').pop();
+
+const items = links.find((item) => item.id === currentPath)?.data ?? [];
+---
+
+<PageLayout
+    title="বাংলা বর্ণ চিনি ও বাংলা পড়তে শিখি (প্রেসেন্টেশন)"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/study-materials',
+            label: 'শিক্ষাপোকরণ',
+        },
+        {
+            url: '/study-materials/bengali',
+            label: 'বাংলা',
+        },
+        {
+            url: '/study-materials/bengali/know-and-learn-bengali-letters',
+            label: 'বাংলা বর্ণ চিনি ও বাংলা পড়তে শিখি (প্রেসেন্টেশন)',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <Text class="pt-0">
+        শুধু বাংলা বর্ণমালার বই দিয়ে বাচ্চাদের বাংলা শিখানো ইদানিং খুব কষ্টসাধ্য
+        বিষয়। তাই আমরা তৈরি করেছি কিছু মজার প্রেসেন্টেশন। এনিমেশন+সাউন্ড+গেইম
+        থাকায় বাচ্চারা বেশ মজা করে এখন শিখতে পারবে বাংলা বর্ণমালা ও শব্দ গঠন
+        প্রক্রিয়া, ইন শা আল্লাহ।
+    </Text>
+    <Text>
+        এখানে আছে মোট ১১ টি প্রেসেন্টেশন। যার প্রথম ৯ টি প্রেসেন্টেশন দেখালে
+        বাচ্চারা শিখবে বাংলা ৫০ টি বর্ণ, এবং বাকি ২ টা প্রেসেন্টেশন দেখালে
+        বাচ্চারা শিখে যাবে কিভাবে শব্দ তৈরি করতে হয়, ইন শা আল্লাহ।
+    </Text>
+    <Text>
+        নির্ধারিত ফি দিয়ে প্রেসেন্টেশনগুলো ডাউনলোড করতে কল বা হোয়াটস-আপ করুন
+        এখানে: 01911-494547
+    </Text>
+
+    <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+        {
+            items.map((item, index) => (
+                <LinkCard
+                    title={item.title}
+                    link={item.link}
+                    buttonTitle="ডাউনলোড"
+                />
+            ))
+        }
+    </div>
+    <div class="mt-6 text-center">
+        <a
+            href="https://drive.google.com/drive/folders/1nYFWuVmudIwSbxWIg74MTAJb6j3ldhGi?usp=sharing"
+            target="_blank"
+            referrerpolicy="no-referrer"
+        >
+            <Button>বাংলা Worksheet (PDF) ডাউনলোড</Button>
+        </a>
+    </div>
+    <div class="mt-6 text-center *:mx-auto *:rounded-md *:border-1">
+        <YouTube id="FArIDxr45jM" posterQuality="max" />
+    </div>
+</PageLayout>

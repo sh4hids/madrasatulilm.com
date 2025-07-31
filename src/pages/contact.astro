@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Text from '@/components/Text.astro';
+import PageHeader from '@/components/PageHeader.astro';
+import mapImage from '@/assets/images/map.jpeg';
+import ContainerLayout from '@/layouts/ContainerLayout.astro';
+import PageLayout from '@/layouts/PageLayout.astro';
+---
+
+<PageLayout
+    title="যোগাযোগ"
+    breadcrumbItems={[
+        {
+            url: '/',
+            label: 'নীড়পাতা',
+        },
+        {
+            url: '/contact',
+            label: 'যোগাযোগ',
+            isCurrentPage: true,
+        },
+    ]}
+>
+    <div class="grid grid-cols-3 gap-4">
+        <div class="col-span-3 md:col-span-2">
+            <Text variant="h5" class={'pt-0'}>বালক শাখা ও অফিস</Text>
+            <Text>
+                ২১৯/৪/খ, ভিপি রোড, দক্ষিণ পীরেরবাগ (৬০ ফিট ভাঙ্গাব্রীজ সংলগ্ন),
+                ঢাকা-১২১৬
+            </Text>
+            <Text variant="h5">বালিকা শাখা</Text>
+            <Text>
+                ২৪৬/১/বি-৫/১, পশ্চিম আগারগাঁও (৬০ ফিট ভাঙ্গাব্রীজ ও ৬ তলা
+                গার্মেন্টস সংলগ্ন), ঢাকা-১২০৭
+            </Text>
+            <Text variant="h5"
+                >মোবাইল: <a href="tel:+8801914-723676">01914-723676</a></Text
+            >
+            <Text variant="h5"
+                >ইমেইল: <a href="mailto:madrasatulilm.contact@gmail.com"
+                    >madrasatulilm.contact@gmail.com</a
+                ></Text
+            >
+        </div>
+        <div class="col-span-3 col-start-1 pt-4 md:col-span-1 md:col-start-3">
+            <Image src={mapImage} class="h-auto w-full" alt="address-map" />
+        </div>
+    </div>
+</PageLayout>
