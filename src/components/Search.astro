@@ -1,0 +1,194 @@
+---
+import { SearchIcon } from 'lucide-react';
+import '@pagefind/default-ui/css/ui.css';
+import { Button } from './ui/button';
+---
+
+<site-search id="search" class="ms-auto">
+    <Button variant="ghost" size="icon" data-open-modal>
+        <SearchIcon className="h-4 w-4" />
+        <span class="sr-only">Search</span>
+    </Button>
+    <dialog
+        aria-label="search"
+        class="bg-background text-foreground relative mt-4 h-[72vh] max-h-full w-[84vw] max-w-full rounded-md border-1 shadow-md backdrop:backdrop-blur sm:mx-auto sm:mb-auto sm:h-max sm:max-h-[calc(100%-8rem)] sm:min-h-[15rem] sm:w-5/6 sm:max-w-[48rem] md:mt-6"
+    >
+        <button
+            data-close-modal
+            class="text-foreground absolute top-2 right-2 z-10 ms-auto cursor-pointer rounded-xl border-1 px-4 py-2 font-mono text-[8px] font-bold uppercase drop-shadow-sm"
+        >
+            Esc
+        </button>
+
+        <div class="dialog-frame flex flex-col gap-4">
+            {
+                import.meta.env.DEV ? (
+                    <div class="mx-auto text-center">
+                        <p>
+                            Search is only available in production builds.{' '}
+                            <br />
+                            Try building and previewing the site to test it out
+                            locally.
+                        </p>
+                    </div>
+                ) : (
+                    <div class="search-container">
+                        <div id="blog__search" />
+                    </div>
+                )
+            }
+        </div>
+    </dialog>
+</site-search>
+
+<script>
+    class SiteSearch extends HTMLElement {
+        constructor() {
+            super();
+            const openBtn = this.querySelector<HTMLButtonElement>(
+                'button[data-open-modal]'
+            )!;
+            const closeBtn = this.querySelector<HTMLButtonElement>(
+                'button[data-close-modal]'
+            )!;
+            const dialog = this.querySelector('dialog')!;
+            const dialogFrame = this.querySelector('.dialog-frame')!;
+
+            const onWindowClick = (event: MouseEvent) => {
+                // check if it's a link
+                const isLink = 'href' in (event.target || {});
+                // make sure the click is either a link or outside of the dialog
+                if (
+                    isLink ||
+                    (document.body.contains(event.target as Node) &&
+                        !dialogFrame.contains(event.target as Node))
+                )
+                    closeModal();
+            };
+
+            const openModal = (event?: MouseEvent) => {
+                dialog.showModal();
+                this.querySelector('input')?.focus();
+                event?.stopPropagation();
+                window.addEventListener('click', onWindowClick);
+            };
+
+            const closeModal = () => {
+                if (dialog.open) {
+                    dialog.close();
+                    window.removeEventListener('click', onWindowClick);
+                }
+            };
+
+            openBtn.addEventListener('click', openModal);
+            openBtn.disabled = false;
+            closeBtn.addEventListener('click', closeModal);
+
+            // Listen for `/` keyboard shortcut
+            window.addEventListener('keydown', (e) => {
+                if (e.key === '/' && !dialog.open) {
+                    openModal();
+                    e.preventDefault();
+                }
+            });
+
+            function createUI() {
+                if (import.meta.env.DEV) return;
+
+                const onIdle =
+                    window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+
+                onIdle(async () => {
+                    const { PagefindUI } = await import('@pagefind/default-ui');
+                    new PagefindUI({
+                        element: '#blog__search',
+                        baseUrl: import.meta.env.BASE_URL,
+                        bundlePath:
+                            import.meta.env.BASE_URL.replace(/\/$/, '') +
+                            '/pagefind/',
+                        showImages: false,
+                        showSubResults: true,
+                        translations: {
+                            placeholder: 'খুঁজুন...',
+                            zero_results: `'[SEARCH_TERM]' এর জন্য কিছু পাওয়া যায়নি`,
+                            load_more: 'আরও দেখুন',
+                            many_results: `'[SEARCH_TERM]' এর জন্য [COUNT] টি ফলাফল পাওয়া গেছে`,
+                            one_result: `'[SEARCH_TERM]' এর জন্য [COUNT] টি ফলাফল পাওয়া গেছে`,
+                            clear_search: 'X',
+                        },
+                    });
+                });
+            }
+
+            if (document.readyState !== 'loading') {
+                createUI();
+            } else {
+                window.addEventListener('DOMContentLoaded', () => {
+                    createUI();
+                });
+            }
+
+            // close modal and clear input on view-transtion
+            document.addEventListener('astro:after-swap', () => {
+                // clear the search field
+                (
+                    document.querySelector(
+                        '.pagefind-ui__search-clear'
+                    ) as HTMLButtonElement
+                )?.click();
+                // close the modal & remove event listener on body
+                closeModal();
+            });
+        }
+    }
+
+    customElements.define('site-search', SiteSearch);
+</script>
+
+<style is:global>
+    #blog__search .pagefind-ui__drawer {
+        padding: theme('spacing.4');
+    }
+
+    #blog__search .pagefind-ui__search-input {
+        outline: none;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid var(--color-border);
+        font-weight: normal;
+        padding-right: 100px;
+    }
+
+    #blog__search .pagefind-ui__search-clear {
+        /* class="rounded border bg-surface-1 px-2 py-1 text-xs outline-none"
+ */
+        font-size: theme('fontSize.xs');
+        padding: 0.25rem 0.5rem;
+        background: var(--color-background);
+        height: auto;
+        top: 10px;
+        right: theme('spacing.16');
+        border-radius: theme('borderRadius.DEFAULT');
+    }
+
+    #blog__search .pagefind-ui__result {
+        color: var(--color-foreground);
+    }
+
+    #blog__search .pagefind-ui__result:last-of-type {
+        border-bottom: none;
+    }
+
+    #blog__search .pagefind-ui__result-link {
+        color: var(--color-primary);
+    }
+
+    #blog__search {
+        --pagefind-ui-font: theme('fontFamily.sans');
+        --pagefind-ui-text: var(--color-foreground);
+        --pagefind-ui-background: var(--color-background);
+        --pagefind-ui-primary: var(--color-primary);
+        --pagefind-ui-border: var(--color-border);
+        --pagefind-ui-border-width: 1px;
+    }
+</style>
