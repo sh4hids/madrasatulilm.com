@@ -22,8 +22,8 @@ export const siteConfig: SiteConfig = {
     author: 'Shahidul Islam Majumder',
     title: 'মাদ্‌রাসাতুল ইল্‌ম',
     description: 'বিশুদ্ধ ইসলামি জ্ঞানের এক নির্ভরযোগ্য প্রতিষ্ঠান',
-    lang: 'en',
-    ogLocale: 'en_US',
+    lang: 'bn',
+    ogLocale: 'bn_BD',
     date: {
         locale: 'en-US',
         options: {
