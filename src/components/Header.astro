@@ -4,6 +4,7 @@ import ModeToggle from '@/components/ModeToggle.tsx';
 
 import { isActivePath } from '@/lib/utils';
 import MobileNavbar from './MobileNavbar.astro';
+import Search from './Search.astro';
 
 const currentPath = Astro.url.pathname;
 ---
@@ -71,7 +72,8 @@ const currentPath = Astro.url.pathname;
                     যোগাযোগ
                 </HeaderLink>
             </nav>
-            <div class="flex items-center gap-4 *:pr-4 last:*:pr-0">
+            <div class="flex items-center *:pr-4 last:*:pr-0">
+                <Search />
                 <ModeToggle client:load />
                 <MobileNavbar />
             </div>
