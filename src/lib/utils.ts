@@ -28,3 +28,10 @@ export const isActivePath = (
             .pop() === path
     );
 };
+
+export const getCurrentPath = (url: string) => {
+    return url
+        .replace(/(^\/+|\/+$)/gm, '')
+        .split('/')
+        .pop();
+};
