@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import PageLayout from '@/layouts/PageLayout.astro';
 import Text from '@/components/Text.astro';
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
     const books = await getCollection('books');
