@@ -2,9 +2,10 @@
 import LinkCard from '@/components/LinkCard.astro';
 import PageLayout from '@/layouts/PageLayout.astro';
 import { getCollection } from 'astro:content';
+import { getCurrentPath } from '@/lib/utils';
 
 const links = await getCollection('links');
-const currentPath = Astro.url.pathname.split('/').pop();
+const currentPath = getCurrentPath(Astro.url.pathname);
 
 const items = links.find((item) => item.id === currentPath)?.data ?? [];
 ---

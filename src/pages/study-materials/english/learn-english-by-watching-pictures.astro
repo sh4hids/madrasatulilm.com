@@ -5,9 +5,10 @@ import { getCollection } from 'astro:content';
 import Text from '@/components/Text.astro';
 import { YouTube } from '@astro-community/astro-embed-youtube';
 import { Button } from '@/components/ui/button';
+import { getCurrentPath } from '@/lib/utils';
 
 const links = await getCollection('links');
-const currentPath = Astro.url.pathname.split('/').pop();
+const currentPath = getCurrentPath(Astro.url.pathname);
 
 const items = links.find((item) => item.id === currentPath)?.data ?? [];
 ---
